@@ -101,7 +101,6 @@ export { default as IconArrowClockwise } from './ArrowClockwise';
 export { default as IconShuffle } from './Shuffle';
 export { default as IconScrewdriverWrench } from './ScrewdriverWrench';
 export { default as IconChartSimple } from './ChartSimple';
-
 export { default as IconNotorious } from './Notorious';
 export { default as IconShoppyz } from './Shoppyz';
 export { default as IconBlitzlink } from './Blitzlink';

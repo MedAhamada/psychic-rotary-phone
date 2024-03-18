@@ -64,7 +64,7 @@
   "description": "This library was generated with [Nx](https://nx.dev).",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel src -d dist"
+    "build": "babel src -d src"
   },
   "repository": {
     "type": "git",
