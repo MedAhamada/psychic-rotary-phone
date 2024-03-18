@@ -1,5 +1,9 @@
-var _jsxFileName = "/media/mohamed/Nouveau nom3/workspace/hello-jonzz/eskimoz/src/eskimoz-ui/src/lib/filters/date.jsx",
-  _this = this;
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 import React, { useState } from 'react';
 import { DatePicker } from 'antd';
 import dayjs from 'dayjs';
@@ -17,27 +21,30 @@ import styles from './index.module.css';
  *
  * @returns {JSX.Element} React component rendering a date filter interface.
  */
-import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
-import { Fragment as _Fragment } from "react/jsx-dev-runtime";
 var DateFilter = function DateFilter(_ref) {
   var onFilter = _ref.onFilter,
     onReset = _ref.onReset,
     colAccessor = _ref.colAccessor;
   var _useState = useState(false),
-    open = _useState[0],
-    setOpen = _useState[1];
-  var _useState2 = useState(null),
-    dateFrom = _useState2[0],
-    setDateFrom = _useState2[1];
+    _useState2 = _slicedToArray(_useState, 2),
+    open = _useState2[0],
+    setOpen = _useState2[1];
   var _useState3 = useState(null),
-    dateTo = _useState3[0],
-    setDateTo = _useState3[1];
-  var _useState4 = useState(false),
-    isActivated = _useState4[0],
-    setIsActivated = _useState4[1];
-  var _useState5 = useState(false),
-    error = _useState5[0],
-    setError = _useState5[1];
+    _useState4 = _slicedToArray(_useState3, 2),
+    dateFrom = _useState4[0],
+    setDateFrom = _useState4[1];
+  var _useState5 = useState(null),
+    _useState6 = _slicedToArray(_useState5, 2),
+    dateTo = _useState6[0],
+    setDateTo = _useState6[1];
+  var _useState7 = useState(false),
+    _useState8 = _slicedToArray(_useState7, 2),
+    isActivated = _useState8[0],
+    setIsActivated = _useState8[1];
+  var _useState9 = useState(false),
+    _useState10 = _slicedToArray(_useState9, 2),
+    error = _useState10[0],
+    setError = _useState10[1];
   var activeFilterClass = isActivated ? 'active-filter-icon' : 'filter-icon';
   var handleReset = function handleReset() {
     setDateFrom(null);
@@ -56,144 +63,71 @@ var DateFilter = function DateFilter(_ref) {
       setIsActivated(true);
     }
   };
-  return /*#__PURE__*/_jsxDEV(_Fragment, {
-    children: [/*#__PURE__*/_jsxDEV("button", {
-      className: "flex-center",
-      onClick: function onClick() {
-        return setOpen(!open);
-      },
-      "data-testid": "open-" + colAccessor + "-date-filter",
-      children: /*#__PURE__*/_jsxDEV(IconSlidersHoriz, {
-        className: activeFilterClass
-      }, void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 54,
-        columnNumber: 9
-      }, _this)
-    }, void 0, false, {
-      fileName: _jsxFileName,
-      lineNumber: 49,
-      columnNumber: 7
-    }, _this), open && /*#__PURE__*/_jsxDEV("div", {
-      className: "flex-col " + styles['filter-container'],
-      "data-testid": colAccessor + "-date-filter",
-      children: [/*#__PURE__*/_jsxDEV("div", {
-        className: "flex-col gap-xs",
-        children: [/*#__PURE__*/_jsxDEV(Text, {
-          variant: 'paragraph-small',
-          children: "du"
-        }, void 0, false, {
-          fileName: _jsxFileName,
-          lineNumber: 62,
-          columnNumber: 13
-        }, _this), /*#__PURE__*/_jsxDEV(DatePicker, {
-          placeholder: "Choisir une date",
-          className: "" + styles['input-date'],
-          allowClear: false,
-          value: dateFrom && dayjs(dateFrom),
-          onChange: function onChange(date, dateString) {
-            setDateFrom(dayjs(date).format('YYYY-MM-DD'));
-          },
-          disabledDate: function disabledDate(current) {
-            return current && dayjs(current).format('YYYY-MM-DD') > dateTo;
-          },
-          format: 'DD-MM-YYYY',
-          "data-testid": colAccessor + "-filter-input-date-from"
-        }, void 0, false, {
-          fileName: _jsxFileName,
-          lineNumber: 63,
-          columnNumber: 13
-        }, _this), error && !dateFrom && /*#__PURE__*/_jsxDEV(Text, {
-          variant: 'paragraph-small',
-          className: 'error-field-text',
-          children: "Please select a date"
-        }, void 0, false, {
-          fileName: _jsxFileName,
-          lineNumber: 78,
-          columnNumber: 15
-        }, _this), /*#__PURE__*/_jsxDEV(Text, {
-          variant: 'paragraph-small',
-          children: "au"
-        }, void 0, false, {
-          fileName: _jsxFileName,
-          lineNumber: 82,
-          columnNumber: 13
-        }, _this), /*#__PURE__*/_jsxDEV(DatePicker, {
-          placeholder: "Choisir une date",
-          className: "" + styles['input-date'],
-          allowClear: false,
-          value: dateTo && dayjs(dateTo),
-          onChange: function onChange(date, dateString) {
-            setDateTo(dayjs(date).format('YYYY-MM-DD'));
-          },
-          disabledDate: function disabledDate(current) {
-            return current && dayjs(current).format('YYYY-MM-DD') < dateFrom;
-          },
-          format: 'DD-MM-YYYY',
-          "data-testid": colAccessor + "-filter-input-date-to"
-        }, void 0, false, {
-          fileName: _jsxFileName,
-          lineNumber: 83,
-          columnNumber: 13
-        }, _this), error && !dateTo && /*#__PURE__*/_jsxDEV(Text, {
-          variant: 'paragraph-small',
-          className: 'error-field-text',
-          "data-testid": colAccessor + "-date-filter-error-inputs",
-          children: "Please select a date"
-        }, void 0, false, {
-          fileName: _jsxFileName,
-          lineNumber: 100,
-          columnNumber: 15
-        }, _this)]
-      }, void 0, true, {
-        fileName: _jsxFileName,
-        lineNumber: 61,
-        columnNumber: 11
-      }, _this), /*#__PURE__*/_jsxDEV("div", {
-        className: "w-full flex-between-center",
-        children: [/*#__PURE__*/_jsxDEV("button", {
-          className: "flex-center",
-          onClick: handleReset,
-          "data-testid": "reset-" + colAccessor + "-date-filter",
-          children: /*#__PURE__*/_jsxDEV(IconBin, {}, void 0, false, {
-            fileName: _jsxFileName,
-            lineNumber: 115,
-            columnNumber: 15
-          }, _this)
-        }, void 0, false, {
-          fileName: _jsxFileName,
-          lineNumber: 110,
-          columnNumber: 13
-        }, _this), /*#__PURE__*/_jsxDEV("button", {
-          className: "flex-center",
-          onClick: handleApply,
-          "data-testid": "apply-" + colAccessor + "-date-filter",
-          children: /*#__PURE__*/_jsxDEV(Text, {
-            variant: "paragraph-small",
-            style: {
-              color: 'var(--blue)'
-            },
-            children: "Apply"
-          }, void 0, false, {
-            fileName: _jsxFileName,
-            lineNumber: 122,
-            columnNumber: 15
-          }, _this)
-        }, void 0, false, {
-          fileName: _jsxFileName,
-          lineNumber: 117,
-          columnNumber: 13
-        }, _this)]
-      }, void 0, true, {
-        fileName: _jsxFileName,
-        lineNumber: 109,
-        columnNumber: 11
-      }, _this)]
-    }, void 0, true, {
-      fileName: _jsxFileName,
-      lineNumber: 57,
-      columnNumber: 9
-    }, _this)]
-  }, void 0, true);
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("button", {
+    className: "flex-center",
+    onClick: function onClick() {
+      return setOpen(!open);
+    },
+    "data-testid": "open-".concat(colAccessor, "-date-filter")
+  }, /*#__PURE__*/React.createElement(IconSlidersHoriz, {
+    className: activeFilterClass
+  })), open && /*#__PURE__*/React.createElement("div", {
+    className: "flex-col ".concat(styles['filter-container']),
+    "data-testid": "".concat(colAccessor, "-date-filter")
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "flex-col gap-xs"
+  }, /*#__PURE__*/React.createElement(Text, {
+    variant: 'paragraph-small'
+  }, "du"), /*#__PURE__*/React.createElement(DatePicker, {
+    placeholder: "Choisir une date",
+    className: "".concat(styles['input-date']),
+    allowClear: false,
+    value: dateFrom && dayjs(dateFrom),
+    onChange: function onChange(date, dateString) {
+      setDateFrom(dayjs(date).format('YYYY-MM-DD'));
+    },
+    disabledDate: function disabledDate(current) {
+      return current && dayjs(current).format('YYYY-MM-DD') > dateTo;
+    },
+    format: 'DD-MM-YYYY',
+    "data-testid": "".concat(colAccessor, "-filter-input-date-from")
+  }), error && !dateFrom && /*#__PURE__*/React.createElement(Text, {
+    variant: 'paragraph-small',
+    className: 'error-field-text'
+  }, "Please select a date"), /*#__PURE__*/React.createElement(Text, {
+    variant: 'paragraph-small'
+  }, "au"), /*#__PURE__*/React.createElement(DatePicker, {
+    placeholder: "Choisir une date",
+    className: "".concat(styles['input-date']),
+    allowClear: false,
+    value: dateTo && dayjs(dateTo),
+    onChange: function onChange(date, dateString) {
+      setDateTo(dayjs(date).format('YYYY-MM-DD'));
+    },
+    disabledDate: function disabledDate(current) {
+      return current && dayjs(current).format('YYYY-MM-DD') < dateFrom;
+    },
+    format: 'DD-MM-YYYY',
+    "data-testid": "".concat(colAccessor, "-filter-input-date-to")
+  }), error && !dateTo && /*#__PURE__*/React.createElement(Text, {
+    variant: 'paragraph-small',
+    className: 'error-field-text',
+    "data-testid": "".concat(colAccessor, "-date-filter-error-inputs")
+  }, "Please select a date")), /*#__PURE__*/React.createElement("div", {
+    className: "w-full flex-between-center"
+  }, /*#__PURE__*/React.createElement("button", {
+    className: "flex-center",
+    onClick: handleReset,
+    "data-testid": "reset-".concat(colAccessor, "-date-filter")
+  }, /*#__PURE__*/React.createElement(IconBin, null)), /*#__PURE__*/React.createElement("button", {
+    className: "flex-center",
+    onClick: handleApply,
+    "data-testid": "apply-".concat(colAccessor, "-date-filter")
+  }, /*#__PURE__*/React.createElement(Text, {
+    variant: "paragraph-small",
+    style: {
+      color: 'var(--blue)'
+    }
+  }, "Apply")))));
 };
 export default DateFilter;

@@ -1,5 +1,9 @@
-var _jsxFileName = "/media/mohamed/Nouveau nom3/workspace/hello-jonzz/eskimoz/src/eskimoz-ui/src/lib/pagination/pagination.jsx",
-  _this = this;
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 import React, { useEffect, useState } from 'react';
 import Text from '../text/text';
 import { IconChevronLeft, IconChevronRight } from '../icons';
@@ -24,8 +28,6 @@ import styles from './pagination.module.css';
  *   onChange={(page, pageSize) => console.log(page, pageSize)}
  * />
  */
-import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
-import { Fragment as _Fragment } from "react/jsx-dev-runtime";
 export var Pagination = function Pagination(_ref) {
   var entriesPerPage = _ref.entriesPerPage,
     _ref$currentPage = _ref.currentPage,
@@ -37,8 +39,9 @@ export var Pagination = function Pagination(_ref) {
     resultText = _ref.resultText,
     entriesText = _ref.entriesText;
   var _useState = useState(currentPage),
-    page = _useState[0],
-    setPage = _useState[1];
+    _useState2 = _slicedToArray(_useState, 2),
+    page = _useState2[0],
+    setPage = _useState2[1];
   useEffect(function () {
     setPage(currentPage);
   }, [currentPage]);
@@ -80,35 +83,22 @@ export var Pagination = function Pagination(_ref) {
     var maxVisiblePages = 5;
     var _loop = function _loop(i) {
       if (i === 1 || i === totalPages || i >= page - Math.floor(maxVisiblePages / 2) && i <= page + Math.floor(maxVisiblePages / 2)) {
-        pageButtons.push( /*#__PURE__*/_jsxDEV("button", {
-          className: styles['number'] + " " + (page === i && styles['active']),
+        pageButtons.push( /*#__PURE__*/React.createElement("button", {
+          key: i,
+          className: "".concat(styles['number'], " ").concat(page === i && styles['active']),
           onClick: function onClick() {
             return handleChange(i);
-          },
-          children: /*#__PURE__*/_jsxDEV(Text, {
-            variant: 'paragraph-small',
-            children: i
-          }, void 0, false, {
-            fileName: _jsxFileName,
-            lineNumber: 97,
-            columnNumber: 13
-          }, _this)
-        }, i, false, {
-          fileName: _jsxFileName,
-          lineNumber: 92,
-          columnNumber: 11
-        }, _this));
+          }
+        }, /*#__PURE__*/React.createElement(Text, {
+          variant: 'paragraph-small'
+        }, i)));
       } else if (i === page - Math.floor(maxVisiblePages / 2) - 1 && page - Math.floor(maxVisiblePages / 2) > 2 || i === page + Math.floor(maxVisiblePages / 2) + 1 && page + Math.floor(maxVisiblePages / 2) < totalPages - 1) {
         if (i !== 1 && i !== totalPages) {
-          pageButtons.push( /*#__PURE__*/_jsxDEV("span", {
-            className: "" + styles['threedots'],
-            "aria-label": "pagination threedots",
-            children: "..."
-          }, i, false, {
-            fileName: _jsxFileName,
-            lineNumber: 108,
-            columnNumber: 13
-          }, _this));
+          pageButtons.push( /*#__PURE__*/React.createElement("span", {
+            key: i,
+            className: "".concat(styles['threedots']),
+            "aria-label": "pagination threedots"
+          }, "..."));
         }
       }
     };
@@ -120,7 +110,7 @@ export var Pagination = function Pagination(_ref) {
   var renderResultsRange = function renderResultsRange() {
     var startResult = (page - 1) * pageSize + 1;
     var endResult = Math.min(page * pageSize, total);
-    return startResult + "-" + endResult + " " + separatorText + " " + total + " " + resultText;
+    return "".concat(startResult, "-").concat(endResult, " ").concat(separatorText, " ").concat(total, " ").concat(resultText);
   };
   var _PagesSizes = [{
     label: '10',
@@ -135,86 +125,37 @@ export var Pagination = function Pagination(_ref) {
     label: '100',
     key: '100'
   }];
-  return /*#__PURE__*/_jsxDEV("div", {
-    className: "flex-between-center " + styles['pagination-container'],
-    "data-testid": 'pagination-component',
-    children: [/*#__PURE__*/_jsxDEV("div", {
-      className: "flex-y-center gap-sm",
-      children: entriesPerPage && /*#__PURE__*/_jsxDEV(_Fragment, {
-        children: [/*#__PURE__*/_jsxDEV(Dropdown, {
-          items: _PagesSizes,
-          value: pageSize,
-          "data-testid": 'entries-per-page',
-          onChange: function onChange(selectedPageSize) {
-            return handlePageSizeChange(selectedPageSize);
-          }
-        }, void 0, false, {
-          fileName: _jsxFileName,
-          lineNumber: 157,
-          columnNumber: 13
-        }, _this), /*#__PURE__*/_jsxDEV(Text, {
-          variant: 'paragraph-small',
-          children: entriesText
-        }, void 0, false, {
-          fileName: _jsxFileName,
-          lineNumber: 165,
-          columnNumber: 13
-        }, _this)]
-      }, void 0, true)
-    }, void 0, false, {
-      fileName: _jsxFileName,
-      lineNumber: 154,
-      columnNumber: 7
-    }, _this), /*#__PURE__*/_jsxDEV("div", {
-      className: "flex-y-center gap-xs",
-      children: [/*#__PURE__*/_jsxDEV(Text, {
-        variant: 'paragraph-small',
-        className: "" + styles['results-number'],
-        children: renderResultsRange()
-      }, void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 171,
-        columnNumber: 9
-      }, _this), /*#__PURE__*/_jsxDEV("button", {
-        className: "" + styles['number'],
-        onClick: handlePrev,
-        "aria-label": "pagination previous",
-        children: /*#__PURE__*/_jsxDEV(IconChevronLeft, {
-          size: 10
-        }, void 0, false, {
-          fileName: _jsxFileName,
-          lineNumber: 183,
-          columnNumber: 11
-        }, _this)
-      }, void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 178,
-        columnNumber: 9
-      }, _this), renderPageButtons(), /*#__PURE__*/_jsxDEV("button", {
-        className: "" + styles['number'],
-        onClick: handleNext,
-        "aria-label": "pagination next",
-        children: /*#__PURE__*/_jsxDEV(IconChevronRight, {
-          size: 10
-        }, void 0, false, {
-          fileName: _jsxFileName,
-          lineNumber: 193,
-          columnNumber: 11
-        }, _this)
-      }, void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 188,
-        columnNumber: 9
-      }, _this)]
-    }, void 0, true, {
-      fileName: _jsxFileName,
-      lineNumber: 170,
-      columnNumber: 7
-    }, _this)]
-  }, void 0, true, {
-    fileName: _jsxFileName,
-    lineNumber: 150,
-    columnNumber: 5
-  }, _this);
+  return /*#__PURE__*/React.createElement("div", {
+    className: "flex-between-center ".concat(styles['pagination-container']),
+    "data-testid": 'pagination-component'
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "flex-y-center gap-sm"
+  }, entriesPerPage && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Dropdown, {
+    items: _PagesSizes,
+    value: pageSize,
+    "data-testid": 'entries-per-page',
+    onChange: function onChange(selectedPageSize) {
+      return handlePageSizeChange(selectedPageSize);
+    }
+  }), /*#__PURE__*/React.createElement(Text, {
+    variant: 'paragraph-small'
+  }, entriesText))), /*#__PURE__*/React.createElement("div", {
+    className: "flex-y-center gap-xs"
+  }, /*#__PURE__*/React.createElement(Text, {
+    variant: 'paragraph-small',
+    className: "".concat(styles['results-number'])
+  }, renderResultsRange()), /*#__PURE__*/React.createElement("button", {
+    className: "".concat(styles['number']),
+    onClick: handlePrev,
+    "aria-label": "pagination previous"
+  }, /*#__PURE__*/React.createElement(IconChevronLeft, {
+    size: 10
+  })), renderPageButtons(), /*#__PURE__*/React.createElement("button", {
+    className: "".concat(styles['number']),
+    onClick: handleNext,
+    "aria-label": "pagination next"
+  }, /*#__PURE__*/React.createElement(IconChevronRight, {
+    size: 10
+  }))));
 };
 export default Pagination;

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Text from '../text/text';
 import styles from './card.module.css';
 import Badge from '../badge/badge';
-import { Link } from 'react-router-dom';
 import { IconCalendar, IconChartSimple } from '../icons';
 
 /**
@@ -92,9 +91,9 @@ const ToolCard = ({
   );
 
   const renderLink = () => (
-    <Link {...{ ...props, className: styles['tool-card-container'] }}>
+    <a {...{ ...props, className: styles['tool-card-container'] }}>
       {content}
-    </Link>
+    </a>
   );
   return status === 'active' ? renderLink() : renderButton();
 };

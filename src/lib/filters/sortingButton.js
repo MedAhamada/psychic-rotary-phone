@@ -1,19 +1,23 @@
-import _objectWithoutPropertiesLoose from "/media/mohamed/Nouveau nom3/workspace/hello-jonzz/eskimoz/src/eskimoz-ui/node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js";
 var _excluded = ["sortingAction", "sort"];
-var _jsxFileName = "/media/mohamed/Nouveau nom3/workspace/hello-jonzz/eskimoz/src/eskimoz-ui/src/lib/filters/sortingButton.jsx",
-  _this = this;
-import "core-js/modules/es.array.sort.js";
-import "core-js/modules/es.object.assign.js";
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 import React, { useEffect, useState } from 'react';
 import { IconSort, IconSortDown, IconSortUp } from '../icons';
-import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
 var SortingButton = function SortingButton(_ref) {
   var sortingAction = _ref.sortingAction,
     sort = _ref.sort,
-    props = _objectWithoutPropertiesLoose(_ref, _excluded);
+    props = _objectWithoutProperties(_ref, _excluded);
   var _useState = useState(sort || 'none'),
-    sorting = _useState[0],
-    setSorting = _useState[1];
+    _useState2 = _slicedToArray(_useState, 2),
+    sorting = _useState2[0],
+    setSorting = _useState2[1];
   useEffect(function () {
     setSorting(sort);
   }, [sort]);
@@ -26,36 +30,18 @@ var SortingButton = function SortingButton(_ref) {
       sortingAction('none');
     }
   };
-  return /*#__PURE__*/_jsxDEV("button", Object.assign({
+  return /*#__PURE__*/React.createElement("button", _extends({
     className: 'flex-center',
     onClick: handleChangeSort
-  }, props, {
-    children: [sorting === 'ASC' && /*#__PURE__*/_jsxDEV(IconSortUp, {
-      size: 24,
-      "data-testid": 'icon-sort-asc'
-    }, void 0, false, {
-      fileName: _jsxFileName,
-      lineNumber: 23,
-      columnNumber: 9
-    }, _this), sorting === 'DESC' && /*#__PURE__*/_jsxDEV(IconSortDown, {
-      size: 24,
-      "data-testid": 'icon-sort-desc'
-    }, void 0, false, {
-      fileName: _jsxFileName,
-      lineNumber: 26,
-      columnNumber: 9
-    }, _this), sorting === 'none' && /*#__PURE__*/_jsxDEV(IconSort, {
-      size: 24,
-      "data-testid": 'icon-sort-none'
-    }, void 0, false, {
-      fileName: _jsxFileName,
-      lineNumber: 29,
-      columnNumber: 9
-    }, _this)]
-  }), void 0, true, {
-    fileName: _jsxFileName,
-    lineNumber: 21,
-    columnNumber: 5
-  }, _this);
+  }, props), sorting === 'ASC' && /*#__PURE__*/React.createElement(IconSortUp, {
+    size: 24,
+    "data-testid": 'icon-sort-asc'
+  }), sorting === 'DESC' && /*#__PURE__*/React.createElement(IconSortDown, {
+    size: 24,
+    "data-testid": 'icon-sort-desc'
+  }), sorting === 'none' && /*#__PURE__*/React.createElement(IconSort, {
+    size: 24,
+    "data-testid": 'icon-sort-none'
+  }));
 };
 export default SortingButton;

@@ -1,18 +1,16 @@
-import _objectWithoutPropertiesLoose from "/media/mohamed/Nouveau nom3/workspace/hello-jonzz/eskimoz/src/eskimoz-ui/node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js";
 var _excluded = ["name", "options", "label", "placeholder", "width", "onChange", "error", "required", "labelInfo", "value"],
   _excluded2 = ["name", "error", "options", "label", "onChange", "value", "width", "required", "placeholder", "labelInfo", "displayLabel"],
   _excluded3 = ["name", "items", "label", "onChange", "width", "required", "value", "error", "labelInfo", "buttonClassName", "hoverPrimary"],
   _excluded4 = ["name", "items", "label", "onChange", "value", "width", "required", "error", "labelInfo"];
-var _jsxFileName = "/media/mohamed/Nouveau nom3/workspace/hello-jonzz/eskimoz/src/eskimoz-ui/src/lib/dropdown/dropdown.jsx",
-  _this = this;
-import "core-js/modules/es.array.find.js";
-import "core-js/modules/es.array.includes.js";
-import "core-js/modules/es.array.join.js";
-import "core-js/modules/es.array.map.js";
-import "core-js/modules/es.function.name.js";
-import "core-js/modules/es.object.assign.js";
-import "core-js/modules/es.object.to-string.js";
-import "core-js/modules/es.string.includes.js";
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 import React, { useEffect, useRef, useState } from 'react';
 import { ButtonDropdown } from '../button/button';
 import { Checkbox, Radio, Space, Dropdown as AntDropdown, Select } from 'antd';
@@ -35,8 +33,6 @@ import { Loader } from '../loader/loader';
  * @param  placeholder - string
  * @param  width      - If not set, 100% by default
  */
-import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
-import { Fragment as _Fragment } from "react/jsx-dev-runtime";
 export var RadioDropdown = function RadioDropdown(_ref) {
   var name = _ref.name,
     options = _ref.options,
@@ -48,16 +44,19 @@ export var RadioDropdown = function RadioDropdown(_ref) {
     required = _ref.required,
     labelInfo = _ref.labelInfo,
     value = _ref.value,
-    props = _objectWithoutPropertiesLoose(_ref, _excluded);
+    props = _objectWithoutProperties(_ref, _excluded);
   var _useState = useState(false),
-    showDropdown = _useState[0],
-    setShowDropdown = _useState[1];
-  var _useState2 = useState(),
-    valueOption = _useState2[0],
-    setValueOption = _useState2[1]; // onlu for story book test
-  var _useState3 = useState(null),
-    buttonText = _useState3[0],
-    setButtonText = _useState3[1];
+    _useState2 = _slicedToArray(_useState, 2),
+    showDropdown = _useState2[0],
+    setShowDropdown = _useState2[1];
+  var _useState3 = useState(),
+    _useState4 = _slicedToArray(_useState3, 2),
+    valueOption = _useState4[0],
+    setValueOption = _useState4[1]; // onlu for story book test
+  var _useState5 = useState(null),
+    _useState6 = _slicedToArray(_useState5, 2),
+    buttonText = _useState6[0],
+    setButtonText = _useState6[1];
   var errorClass = error ? 'error-field' : '';
   var menuRef = useRef(null);
   var menuButtonRef = useRef(null);
@@ -73,105 +72,53 @@ export var RadioDropdown = function RadioDropdown(_ref) {
   useEffect(function () {
     document.addEventListener('click', handleBlurMenu);
   }, []);
-  return /*#__PURE__*/_jsxDEV("div", {
+  return /*#__PURE__*/React.createElement("div", {
     style: {
       width: width
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: 'dropdown-container'
+  }, label && /*#__PURE__*/React.createElement(Label, {
+    label: label,
+    required: required,
+    info: labelInfo
+  }), /*#__PURE__*/React.createElement("span", {
+    ref: menuButtonRef
+  }, /*#__PURE__*/React.createElement(ButtonDropdown, _extends({
+    placeholder: placeholder,
+    text: buttonText ? buttonText : value,
+    onClick: function onClick(e) {
+      e.preventDefault();
+      setShowDropdown(!showDropdown);
     },
-    children: [/*#__PURE__*/_jsxDEV("div", {
-      className: 'dropdown-container',
-      children: [label && /*#__PURE__*/_jsxDEV(Label, {
-        label: label,
-        required: required,
-        info: labelInfo
-      }, void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 65,
-        columnNumber: 19
-      }, _this), /*#__PURE__*/_jsxDEV("span", {
-        ref: menuButtonRef,
-        children: /*#__PURE__*/_jsxDEV(ButtonDropdown, Object.assign({
-          placeholder: placeholder,
-          text: buttonText ? buttonText : value,
-          onClick: function onClick(e) {
-            e.preventDefault();
-            setShowDropdown(!showDropdown);
-          },
-          open: showDropdown,
-          className: errorClass
-        }, props), void 0, false, {
-          fileName: _jsxFileName,
-          lineNumber: 67,
-          columnNumber: 11
-        }, _this)
-      }, void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 66,
-        columnNumber: 9
-      }, _this)]
-    }, void 0, true, {
-      fileName: _jsxFileName,
-      lineNumber: 64,
-      columnNumber: 7
-    }, _this), showDropdown && /*#__PURE__*/_jsxDEV("div", {
-      className: styles['radio-dropdown'],
-      ref: menuRef,
-      children: /*#__PURE__*/_jsxDEV("div", {
-        className: styles['radio-dropdown-options'],
-        children: /*#__PURE__*/_jsxDEV(Radio.Group, {
-          defaultValue: value,
-          onChange: handleChange,
-          className: "w-full",
-          children: /*#__PURE__*/_jsxDEV(Space, {
-            direction: "vertical",
-            className: "w-full",
-            children: options.map(function (option, index) {
-              return /*#__PURE__*/_jsxDEV(Radio, {
-                name: name,
-                value: option.value,
-                className: styles['dropdown-radio-item'] + " " + (option.value === valueOption && styles['checked']),
-                onChange: function onChange() {
-                  return setButtonText(option.label);
-                },
-                children: option.label
-              }, index, false, {
-                fileName: _jsxFileName,
-                lineNumber: 90,
-                columnNumber: 19
-              }, _this);
-            })
-          }, void 0, false, {
-            fileName: _jsxFileName,
-            lineNumber: 88,
-            columnNumber: 15
-          }, _this)
-        }, void 0, false, {
-          fileName: _jsxFileName,
-          lineNumber: 83,
-          columnNumber: 13
-        }, _this)
-      }, void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 82,
-        columnNumber: 11
-      }, _this)
-    }, void 0, false, {
-      fileName: _jsxFileName,
-      lineNumber: 81,
-      columnNumber: 9
-    }, _this), error && /*#__PURE__*/_jsxDEV(Text, {
-      variant: 'paragraph-tiny',
-      className: 'error-field-text',
-      children: error
-    }, void 0, false, {
-      fileName: _jsxFileName,
-      lineNumber: 108,
-      columnNumber: 9
-    }, _this)]
-  }, void 0, true, {
-    fileName: _jsxFileName,
-    lineNumber: 63,
-    columnNumber: 5
-  }, _this);
+    open: showDropdown,
+    className: errorClass
+  }, props)))), showDropdown && /*#__PURE__*/React.createElement("div", {
+    className: styles['radio-dropdown'],
+    ref: menuRef
+  }, /*#__PURE__*/React.createElement("div", {
+    className: styles['radio-dropdown-options']
+  }, /*#__PURE__*/React.createElement(Radio.Group, {
+    defaultValue: value,
+    onChange: handleChange,
+    className: "w-full"
+  }, /*#__PURE__*/React.createElement(Space, {
+    direction: "vertical",
+    className: "w-full"
+  }, options.map(function (option, index) {
+    return /*#__PURE__*/React.createElement(Radio, {
+      name: name,
+      key: index,
+      value: option.value,
+      className: "".concat(styles['dropdown-radio-item'], " ").concat(option.value === valueOption && styles['checked']),
+      onChange: function onChange() {
+        return setButtonText(option.label);
+      }
+    }, option.label);
+  }))))), error && /*#__PURE__*/React.createElement(Text, {
+    variant: 'paragraph-tiny',
+    className: 'error-field-text'
+  }, error));
 };
 RadioDropdown.propTypes = {};
 
@@ -197,10 +144,11 @@ export var CheckboxDropdown = function CheckboxDropdown(_ref2) {
     placeholder = _ref2.placeholder,
     labelInfo = _ref2.labelInfo,
     displayLabel = _ref2.displayLabel,
-    props = _objectWithoutPropertiesLoose(_ref2, _excluded2);
-  var _useState4 = useState(false),
-    showDropdown = _useState4[0],
-    setShowDropdown = _useState4[1];
+    props = _objectWithoutProperties(_ref2, _excluded2);
+  var _useState7 = useState(false),
+    _useState8 = _slicedToArray(_useState7, 2),
+    showDropdown = _useState8[0],
+    setShowDropdown = _useState8[1];
   var errorClass = error ? 'error-field' : '';
   var menuRef = useRef(null);
   var menuButtonRef = useRef(null);
@@ -218,117 +166,59 @@ export var CheckboxDropdown = function CheckboxDropdown(_ref2) {
   var handleChange = function handleChange(e) {
     onChange(e);
   };
-  return /*#__PURE__*/_jsxDEV("div", {
+  return /*#__PURE__*/React.createElement("div", {
     style: {
       width: width
+    }
+  }, label && /*#__PURE__*/React.createElement(Label, {
+    label: label,
+    required: required,
+    info: labelInfo
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "",
+    ref: menuButtonRef
+  }, /*#__PURE__*/React.createElement(ButtonDropdown, {
+    placeholder: placeholder,
+    text: value.length && displayLabel ? /*#__PURE__*/React.createElement("div", {
+      className: "flex-y-center gap-sm"
+    }, value.map(function (val) {
+      return options.find(function (opt) {
+        return opt.value === val;
+      }).label;
+    })) : value.join(', '),
+    onClick: function onClick(e) {
+      e.preventDefault();
+      setShowDropdown(!showDropdown);
     },
-    children: [label && /*#__PURE__*/_jsxDEV(Label, {
-      label: label,
-      required: required,
-      info: labelInfo
-    }, void 0, false, {
-      fileName: _jsxFileName,
-      lineNumber: 169,
-      columnNumber: 17
-    }, _this), /*#__PURE__*/_jsxDEV("div", {
-      className: "",
-      ref: menuButtonRef,
-      children: /*#__PURE__*/_jsxDEV(ButtonDropdown, {
-        placeholder: placeholder,
-        text: value.length && displayLabel ? /*#__PURE__*/_jsxDEV("div", {
-          className: "flex-y-center gap-sm",
-          children: value.map(function (val) {
-            return options.find(function (opt) {
-              return opt.value === val;
-            }).label;
-          })
-        }, void 0, false, {
-          fileName: _jsxFileName,
-          lineNumber: 175,
-          columnNumber: 15
-        }, _this) : value.join(', '),
-        onClick: function onClick(e) {
-          e.preventDefault();
-          setShowDropdown(!showDropdown);
-        },
-        open: showDropdown,
-        className: errorClass,
-        "data-testid": props['data-testid'] || 'checkbox-dropdown'
-      }, void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 171,
-        columnNumber: 9
-      }, _this)
-    }, void 0, false, {
-      fileName: _jsxFileName,
-      lineNumber: 170,
-      columnNumber: 7
-    }, _this), showDropdown && /*#__PURE__*/_jsxDEV("div", {
-      className: styles['radio-dropdown'],
-      children: /*#__PURE__*/_jsxDEV("div", {
-        className: styles['radio-dropdown-options'],
-        children: /*#__PURE__*/_jsxDEV(Checkbox.Group, Object.assign({
-          className: "w-full",
-          onChange: handleChange,
-          value: value
-        }, props, {
-          ref: menuRef,
-          children: /*#__PURE__*/_jsxDEV(Space, {
-            direction: "vertical",
-            className: "w-full",
-            children: options.map(function (option, index) {
-              return /*#__PURE__*/_jsxDEV(Checkbox, {
-                name: name,
-                value: option.value,
-                className: styles['dropdown-radio-item'] + " flex-y-center " + (value.includes(option.value) && styles['checked']),
-                checked: true,
-                disabled: option.disabled,
-                children: option.label
-              }, index, false, {
-                fileName: _jsxFileName,
-                lineNumber: 205,
-                columnNumber: 19
-              }, _this);
-            })
-          }, void 0, false, {
-            fileName: _jsxFileName,
-            lineNumber: 203,
-            columnNumber: 15
-          }, _this)
-        }), void 0, false, {
-          fileName: _jsxFileName,
-          lineNumber: 196,
-          columnNumber: 13
-        }, _this)
-      }, void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 195,
-        columnNumber: 11
-      }, _this)
-    }, void 0, false, {
-      fileName: _jsxFileName,
-      lineNumber: 194,
-      columnNumber: 9
-    }, _this), /*#__PURE__*/_jsxDEV("div", {
-      children: error && /*#__PURE__*/_jsxDEV(Text, {
-        variant: 'paragraph-tiny',
-        className: 'error-field-text text-left',
-        children: error
-      }, void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 227,
-        columnNumber: 11
-      }, _this)
-    }, void 0, false, {
-      fileName: _jsxFileName,
-      lineNumber: 225,
-      columnNumber: 7
-    }, _this)]
-  }, void 0, true, {
-    fileName: _jsxFileName,
-    lineNumber: 168,
-    columnNumber: 5
-  }, _this);
+    open: showDropdown,
+    className: errorClass,
+    "data-testid": props['data-testid'] || 'checkbox-dropdown'
+  })), showDropdown && /*#__PURE__*/React.createElement("div", {
+    className: styles['radio-dropdown']
+  }, /*#__PURE__*/React.createElement("div", {
+    className: styles['radio-dropdown-options']
+  }, /*#__PURE__*/React.createElement(Checkbox.Group, _extends({
+    className: "w-full",
+    onChange: handleChange,
+    value: value
+  }, props, {
+    ref: menuRef
+  }), /*#__PURE__*/React.createElement(Space, {
+    direction: "vertical",
+    className: "w-full"
+  }, options.map(function (option, index) {
+    return /*#__PURE__*/React.createElement(Checkbox, {
+      name: name,
+      key: index,
+      value: option.value,
+      className: "".concat(styles['dropdown-radio-item'], " flex-y-center ").concat(value.includes(option.value) && styles['checked']),
+      checked: true,
+      disabled: option.disabled
+    }, option.label);
+  }))))), /*#__PURE__*/React.createElement("div", null, error && /*#__PURE__*/React.createElement(Text, {
+    variant: 'paragraph-tiny',
+    className: 'error-field-text text-left'
+  }, error)));
 };
 CheckboxDropdown.propTypes = {
   options: PropTypes.array.isRequired,
@@ -361,10 +251,11 @@ export var Dropdown = function Dropdown(_ref3) {
     labelInfo = _ref3.labelInfo,
     buttonClassName = _ref3.buttonClassName,
     hoverPrimary = _ref3.hoverPrimary,
-    props = _objectWithoutPropertiesLoose(_ref3, _excluded3);
-  var _useState5 = useState(false),
-    showDropdown = _useState5[0],
-    setShowDropdown = _useState5[1];
+    props = _objectWithoutProperties(_ref3, _excluded3);
+  var _useState9 = useState(false),
+    _useState10 = _slicedToArray(_useState9, 2),
+    showDropdown = _useState10[0],
+    setShowDropdown = _useState10[1];
   var handleChange = function handleChange(key) {
     onChange(key);
     setShowDropdown(false);
@@ -374,86 +265,52 @@ export var Dropdown = function Dropdown(_ref3) {
       key = _ref4.key,
       disabled = _ref4.disabled;
     return {
-      label: /*#__PURE__*/_jsxDEV("button", {
+      label: /*#__PURE__*/React.createElement("button", {
         className: "w-full px-sm py-sm btn-dropdown-item",
         onClick: function onClick() {
           return handleChange(key);
         },
-        "data-testid": "dropdown-item-" + key,
-        disabled: disabled,
-        children: label
-      }, void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 281,
-        columnNumber: 9
-      }, _this),
+        "data-testid": "dropdown-item-".concat(key),
+        disabled: disabled
+      }, label),
       key: key
     };
   });
-  return /*#__PURE__*/_jsxDEV("div", {
+  return /*#__PURE__*/React.createElement("div", {
     style: {
       width: width
+    }
+  }, label && /*#__PURE__*/React.createElement(Label, {
+    label: label,
+    required: required,
+    info: labelInfo
+  }), /*#__PURE__*/React.createElement(AntDropdown, {
+    menu: {
+      items: _items,
+      className: styles['radio-dropdown-options']
     },
-    children: [label && /*#__PURE__*/_jsxDEV(Label, {
-      label: label,
-      required: required,
-      info: labelInfo
-    }, void 0, false, {
-      fileName: _jsxFileName,
-      lineNumber: 296,
-      columnNumber: 17
-    }, _this), /*#__PURE__*/_jsxDEV(AntDropdown, {
-      menu: {
-        items: _items,
-        className: styles['radio-dropdown-options']
-      },
-      trigger: ['click'],
-      open: showDropdown,
-      onOpenChange: function onOpenChange() {
-        return setShowDropdown(!showDropdown);
-      },
-      overlayClassName: hoverPrimary ? 'hover-primary' : '',
-      children: /*#__PURE__*/_jsxDEV(ButtonDropdown, Object.assign({
-        placeholder: label,
-        text: value,
-        onClick: function onClick(e) {
-          e.preventDefault();
-          setShowDropdown(!showDropdown);
-        },
-        open: showDropdown,
-        style: {
-          border: error && '1px solid var(--red)'
-        },
-        className: buttonClassName
-      }, props), void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 307,
-        columnNumber: 9
-      }, _this)
-    }, void 0, false, {
-      fileName: _jsxFileName,
-      lineNumber: 297,
-      columnNumber: 7
-    }, _this), /*#__PURE__*/_jsxDEV("div", {
-      children: error && /*#__PURE__*/_jsxDEV(Text, {
-        variant: 'paragraph-tiny',
-        className: 'error-field-text text-left',
-        children: error
-      }, void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 322,
-        columnNumber: 11
-      }, _this)
-    }, void 0, false, {
-      fileName: _jsxFileName,
-      lineNumber: 320,
-      columnNumber: 7
-    }, _this)]
-  }, void 0, true, {
-    fileName: _jsxFileName,
-    lineNumber: 295,
-    columnNumber: 5
-  }, _this);
+    trigger: ['click'],
+    open: showDropdown,
+    onOpenChange: function onOpenChange() {
+      return setShowDropdown(!showDropdown);
+    },
+    overlayClassName: hoverPrimary ? 'hover-primary' : ''
+  }, /*#__PURE__*/React.createElement(ButtonDropdown, _extends({
+    placeholder: label,
+    text: value,
+    onClick: function onClick(e) {
+      e.preventDefault();
+      setShowDropdown(!showDropdown);
+    },
+    open: showDropdown,
+    style: {
+      border: error && '1px solid var(--red)'
+    },
+    className: buttonClassName
+  }, props))), /*#__PURE__*/React.createElement("div", null, error && /*#__PURE__*/React.createElement(Text, {
+    variant: 'paragraph-tiny',
+    className: 'error-field-text text-left'
+  }, error)));
 };
 Dropdown.propTypes = {
   items: PropTypes.array.isRequired,
@@ -484,81 +341,47 @@ export var DropdownSearch = function DropdownSearch(_ref5) {
     required = _ref5.required,
     error = _ref5.error,
     labelInfo = _ref5.labelInfo,
-    props = _objectWithoutPropertiesLoose(_ref5, _excluded4);
+    props = _objectWithoutProperties(_ref5, _excluded4);
   var handleChange = function handleChange(item) {
     onChange(item);
   };
-  return /*#__PURE__*/_jsxDEV("div", {
+  return /*#__PURE__*/React.createElement("div", {
     style: {
       width: width
+    }
+  }, label && /*#__PURE__*/React.createElement(Label, {
+    label: label,
+    required: required,
+    info: labelInfo
+  }), /*#__PURE__*/React.createElement(Select, _extends({
+    showSearch: true,
+    placeholder: label,
+    "data-testid": label,
+    className: styles['select-dropdown-antd'],
+    optionFilterProp: "children",
+    filterOption: function filterOption(input, option) {
+      var _option$label$toLower;
+      return ((_option$label$toLower = option === null || option === void 0 ? void 0 : option.label.toLowerCase()) !== null && _option$label$toLower !== void 0 ? _option$label$toLower : '').includes(input.toLowerCase());
     },
-    children: [label && /*#__PURE__*/_jsxDEV(Label, {
-      label: label,
-      required: required,
-      info: labelInfo
-    }, void 0, false, {
-      fileName: _jsxFileName,
-      lineNumber: 370,
-      columnNumber: 17
-    }, _this), /*#__PURE__*/_jsxDEV(Select, Object.assign({
-      showSearch: true,
-      placeholder: label,
-      "data-testid": label,
-      className: styles['select-dropdown-antd'],
-      optionFilterProp: "children",
-      filterOption: function filterOption(input, option) {
-        var _option$label$toLower;
-        return ((_option$label$toLower = option == null ? void 0 : option.label.toLowerCase()) != null ? _option$label$toLower : '').includes(input.toLowerCase());
-      },
-      filterSort: function filterSort(optionA, optionB) {
-        var _optionA$label, _optionB$label;
-        return ((_optionA$label = optionA == null ? void 0 : optionA.label) != null ? _optionA$label : '').toLowerCase().localeCompare(((_optionB$label = optionB == null ? void 0 : optionB.label) != null ? _optionB$label : '').toLowerCase());
-      },
-      options: items,
-      suffixIcon: /*#__PURE__*/_jsxDEV(_Fragment, {
-        children: [items.length === 0 && /*#__PURE__*/_jsxDEV(Loader, {
-          size: 24
-        }, void 0, false, {
-          fileName: _jsxFileName,
-          lineNumber: 388,
-          columnNumber: 36
-        }, _this), /*#__PURE__*/_jsxDEV(IconChevronDown, {
-          size: 8,
-          style: {
-            color: 'var(--dark)'
-          }
-        }, void 0, false, {
-          fileName: _jsxFileName,
-          lineNumber: 389,
-          columnNumber: 13
-        }, _this)]
-      }, void 0, true),
-      value: value || undefined,
-      onChange: handleChange
-    }, props), void 0, false, {
-      fileName: _jsxFileName,
-      lineNumber: 371,
-      columnNumber: 7
-    }, _this), /*#__PURE__*/_jsxDEV("div", {
-      children: error && /*#__PURE__*/_jsxDEV(Text, {
-        variant: 'paragraph-tiny',
-        className: 'error-field-text text-left',
-        children: error
-      }, void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 398,
-        columnNumber: 11
-      }, _this)
-    }, void 0, false, {
-      fileName: _jsxFileName,
-      lineNumber: 396,
-      columnNumber: 7
-    }, _this)]
-  }, void 0, true, {
-    fileName: _jsxFileName,
-    lineNumber: 369,
-    columnNumber: 5
-  }, _this);
+    filterSort: function filterSort(optionA, optionB) {
+      var _optionA$label, _optionB$label;
+      return ((_optionA$label = optionA === null || optionA === void 0 ? void 0 : optionA.label) !== null && _optionA$label !== void 0 ? _optionA$label : '').toLowerCase().localeCompare(((_optionB$label = optionB === null || optionB === void 0 ? void 0 : optionB.label) !== null && _optionB$label !== void 0 ? _optionB$label : '').toLowerCase());
+    },
+    options: items,
+    suffixIcon: /*#__PURE__*/React.createElement(React.Fragment, null, items.length === 0 && /*#__PURE__*/React.createElement(Loader, {
+      size: 24
+    }), /*#__PURE__*/React.createElement(IconChevronDown, {
+      size: 8,
+      style: {
+        color: 'var(--dark)'
+      }
+    })),
+    value: value || undefined,
+    onChange: handleChange
+  }, props)), /*#__PURE__*/React.createElement("div", null, error && /*#__PURE__*/React.createElement(Text, {
+    variant: 'paragraph-tiny',
+    className: 'error-field-text text-left'
+  }, error)));
 };
 DropdownSearch.propTypes = {
   items: PropTypes.array.isRequired,

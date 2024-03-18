@@ -1,8 +1,7 @@
-import _objectWithoutPropertiesLoose from "/media/mohamed/Nouveau nom3/workspace/hello-jonzz/eskimoz/src/eskimoz-ui/node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js";
 var _excluded = ["children", "variant", "align", "className"];
-var _jsxFileName = "/media/mohamed/Nouveau nom3/workspace/hello-jonzz/eskimoz/src/eskimoz-ui/src/lib/text/text.jsx",
-  _this = this;
-import "core-js/modules/es.object.assign.js";
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 import React from 'react';
 import styles from './text.module.css';
 import PropTypes from 'prop-types';
@@ -11,22 +10,16 @@ import PropTypes from 'prop-types';
  * @param {string} variant - Valid values: 'heading-1', 'heading-2', 'heading-3', 'heading-4', 'heading-5', 'heading-6', 'paragraph-big', 'paragraph-medium', 'paragraph-small', 'paragraph-tiny', 'cta', or 'link'.
  * @param {string} align - Valid values: 'left', 'center', 'right'
  */
-import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
+
 export var Text = function Text(_ref) {
   var children = _ref.children,
     variant = _ref.variant,
     align = _ref.align,
     className = _ref.className,
-    props = _objectWithoutPropertiesLoose(_ref, _excluded);
-  return /*#__PURE__*/_jsxDEV("p", Object.assign({
-    className: " " + styles['text'] + " " + styles[variant] + " " + (align ? styles["text-" + align] : '') + " " + (className ? className : '')
-  }, props, {
-    children: children ? children : null
-  }), void 0, false, {
-    fileName: _jsxFileName,
-    lineNumber: 12,
-    columnNumber: 5
-  }, _this);
+    props = _objectWithoutProperties(_ref, _excluded);
+  return /*#__PURE__*/React.createElement("p", _extends({
+    className: " ".concat(styles['text'], " ").concat(styles[variant], " ").concat(align ? styles["text-".concat(align)] : '', " ").concat(className ? className : '')
+  }, props), children ? children : null);
 };
 Text.propTypes = {
   children: PropTypes.node,

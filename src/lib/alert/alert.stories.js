@@ -1,20 +1,12 @@
-var _jsxFileName = "/media/mohamed/Nouveau nom3/workspace/hello-jonzz/eskimoz/src/eskimoz-ui/src/lib/alert/alert.stories.jsx",
-  _this = this;
-import "core-js/modules/es.object.assign.js";
 import React from 'react';
 import Alert from './alert';
-import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
 var meta = {
   title: 'Alert',
   component: Alert
 };
 export default meta;
 export var AlertSucess = function AlertSucess(args) {
-  return /*#__PURE__*/_jsxDEV(Alert, Object.assign({}, args), void 0, false, {
-    fileName: _jsxFileName,
-    lineNumber: 11,
-    columnNumber: 38
-  }, _this);
+  return /*#__PURE__*/React.createElement(Alert, args);
 };
 AlertSucess.args = {
   type: 'success',
@@ -23,11 +15,7 @@ AlertSucess.args = {
   show: true
 };
 export var AlertWarning = function AlertWarning(args) {
-  return /*#__PURE__*/_jsxDEV(Alert, Object.assign({}, args), void 0, false, {
-    fileName: _jsxFileName,
-    lineNumber: 20,
-    columnNumber: 39
-  }, _this);
+  return /*#__PURE__*/React.createElement(Alert, args);
 };
 AlertWarning.args = {
   type: 'warning',
@@ -36,11 +24,7 @@ AlertWarning.args = {
   show: true
 };
 export var AlertDanger = function AlertDanger(args) {
-  return /*#__PURE__*/_jsxDEV(Alert, Object.assign({}, args), void 0, false, {
-    fileName: _jsxFileName,
-    lineNumber: 29,
-    columnNumber: 38
-  }, _this);
+  return /*#__PURE__*/React.createElement(Alert, args);
 };
 AlertDanger.args = {
   type: 'danger',

@@ -1,10 +1,14 @@
-import _objectWithoutPropertiesLoose from "/media/mohamed/Nouveau nom3/workspace/hello-jonzz/eskimoz/src/eskimoz-ui/node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js";
 var _excluded = ["type", "label", "required", "error", "icon", "labelInfo", "datalist", "options", "outlined", "grayed"],
   _excluded2 = ["label", "placeholder", "required", "error", "type", "outlined", "country", "prefixIcon", "labelInfo", "grayed", "value", "onChange"];
-var _jsxFileName = "/media/mohamed/Nouveau nom3/workspace/hello-jonzz/eskimoz/src/eskimoz-ui/src/lib/input/input.jsx",
-  _this = this;
-import "core-js/modules/es.array.index-of.js";
-import "core-js/modules/es.object.assign.js";
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import Text from '../text/text';
@@ -27,7 +31,6 @@ import PhoneInput from 'react-phone-input-2';
  * @param grayed
  * @param props
  */
-import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
 export var Input = function Input(_ref) {
   var type = _ref.type,
     label = _ref.label,
@@ -40,69 +43,35 @@ export var Input = function Input(_ref) {
     options = _ref.options,
     outlined = _ref.outlined,
     grayed = _ref.grayed,
-    props = _objectWithoutPropertiesLoose(_ref, _excluded);
+    props = _objectWithoutProperties(_ref, _excluded);
   var inputRef = useRef(null);
   var _useState = useState(undefined),
-    openAutoComplete = _useState[0],
-    setOpenAutoComplete = _useState[1];
+    _useState2 = _slicedToArray(_useState, 2),
+    openAutoComplete = _useState2[0],
+    setOpenAutoComplete = _useState2[1];
   var errorClass = error ? 'error-field' : '';
   if (type === 'text' || type === 'tel') {
-    return /*#__PURE__*/_jsxDEV("div", {
-      className: 'w-full',
-      children: [label && /*#__PURE__*/_jsxDEV(Label, {
-        label: label,
-        required: required,
-        info: labelInfo
-      }, void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 51,
-        columnNumber: 19
-      }, _this), /*#__PURE__*/_jsxDEV("div", {
-        className: styles['input-container'],
-        children: /*#__PURE__*/_jsxDEV("div", {
-          children: /*#__PURE__*/_jsxDEV("input", Object.assign({
-            type: type,
-            className: styles['input-element'] + " " + styles['input-text'] + " " + errorClass,
-            required: required,
-            style: {
-              backgroundColor: grayed === 'grayish' && 'var(--grayish)' || grayed && 'var(--gray-x-light)',
-              border: grayed && 0,
-              color: grayed && 'var(--dark)'
-            }
-          }, props), void 0, false, {
-            fileName: _jsxFileName,
-            lineNumber: 54,
-            columnNumber: 13
-          }, _this)
-        }, void 0, false, {
-          fileName: _jsxFileName,
-          lineNumber: 53,
-          columnNumber: 11
-        }, _this)
-      }, void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 52,
-        columnNumber: 9
-      }, _this), /*#__PURE__*/_jsxDEV("div", {
-        children: error && /*#__PURE__*/_jsxDEV(Text, {
-          variant: 'paragraph-tiny',
-          className: 'error-field-text text-left',
-          children: error
-        }, void 0, false, {
-          fileName: _jsxFileName,
-          lineNumber: 71,
-          columnNumber: 13
-        }, _this)
-      }, void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 69,
-        columnNumber: 9
-      }, _this)]
-    }, void 0, true, {
-      fileName: _jsxFileName,
-      lineNumber: 50,
-      columnNumber: 7
-    }, _this);
+    return /*#__PURE__*/React.createElement("div", {
+      className: 'w-full'
+    }, label && /*#__PURE__*/React.createElement(Label, {
+      label: label,
+      required: required,
+      info: labelInfo
+    }), /*#__PURE__*/React.createElement("div", {
+      className: styles['input-container']
+    }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("input", _extends({
+      type: type,
+      className: "".concat(styles['input-element'], " ").concat(styles['input-text'], " ").concat(errorClass),
+      required: required,
+      style: {
+        backgroundColor: grayed === 'grayish' && 'var(--grayish)' || grayed && 'var(--gray-x-light)',
+        border: grayed && 0,
+        color: grayed && 'var(--dark)'
+      }
+    }, props)))), /*#__PURE__*/React.createElement("div", null, error && /*#__PURE__*/React.createElement(Text, {
+      variant: 'paragraph-tiny',
+      className: 'error-field-text text-left'
+    }, error)));
   }
   var focusInput = function focusInput() {
     if (inputRef.current) {
@@ -118,163 +87,75 @@ export var Input = function Input(_ref) {
     return option.label.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1;
   };
   if (type === 'autocomplete') {
-    return /*#__PURE__*/_jsxDEV("div", {
+    return /*#__PURE__*/React.createElement("div", {
       style: {
         position: 'relative'
-      },
-      children: [label && /*#__PURE__*/_jsxDEV(Label, {
-        label: label,
-        required: required,
-        info: labelInfo
-      }, void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 102,
-        columnNumber: 19
-      }, _this), /*#__PURE__*/_jsxDEV(AutoComplete, Object.assign({
-        options: options,
-        open: openAutoComplete,
-        ref: inputRef,
-        style: {
-          width: '100%',
-          height: 'auto'
-        },
-        onBlur: handleBlur,
-        onFocus: function onFocus() {
-          return setOpenAutoComplete(true);
-        },
-        filterOption: function filterOption(inputValue, option) {
-          return handleFilterOption(inputValue, option);
-        }
-      }, props, {
-        "data-testid": 'autocomplete-' + props['data-testid'],
-        children: /*#__PURE__*/_jsxDEV("input", {
-          type: "text",
-          className: styles['input-element'] + " " + styles['input-text'] + " " + errorClass,
-          "data-testid": props['data-testid']
-        }, void 0, false, {
-          fileName: _jsxFileName,
-          lineNumber: 116,
-          columnNumber: 11
-        }, _this)
-      }), void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 103,
-        columnNumber: 9
-      }, _this), error && /*#__PURE__*/_jsxDEV(Text, {
-        variant: 'paragraph-tiny',
-        className: 'error-field-text',
-        children: error
-      }, void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 124,
-        columnNumber: 11
-      }, _this), openAutoComplete ? /*#__PURE__*/_jsxDEV(IconChevronUp, {
-        size: 8,
-        className: styles['auto-complete-drop-icon']
-      }, void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 130,
-        columnNumber: 11
-      }, _this) : /*#__PURE__*/_jsxDEV(IconChevronDown, {
-        size: 8,
-        className: styles['auto-complete-drop-icon'],
-        onClick: focusInput
-      }, void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 135,
-        columnNumber: 11
-      }, _this)]
-    }, void 0, true, {
-      fileName: _jsxFileName,
-      lineNumber: 101,
-      columnNumber: 7
-    }, _this);
-  }
-  return /*#__PURE__*/_jsxDEV("div", {
-    children: [label && /*#__PURE__*/_jsxDEV(Label, {
+      }
+    }, label && /*#__PURE__*/React.createElement(Label, {
       label: label,
       required: required,
       info: labelInfo
-    }, void 0, false, {
-      fileName: _jsxFileName,
-      lineNumber: 147,
-      columnNumber: 17
-    }, _this), /*#__PURE__*/_jsxDEV("div", {
-      className: styles['input-container'],
-      children: /*#__PURE__*/_jsxDEV("div", {
-        className: styles['input-url-email-container'] + " " + errorClass,
-        children: [icon && /*#__PURE__*/_jsxDEV("div", {
-          className: styles['input-side'],
-          style: {
-            backgroundColor: outlined && 'transparent' || grayed === 'grayish' && 'var(--grayish)' || grayed && 'var(--gray-x-light)',
-            border: grayed && 0,
-            color: grayed && 'var(--dark)'
-          },
-          children: [type === 'email' && /*#__PURE__*/_jsxDEV(IconEmail, {}, void 0, false, {
-            fileName: _jsxFileName,
-            lineNumber: 162,
-            columnNumber: 36
-          }, _this), type === 'password' && /*#__PURE__*/_jsxDEV(IconKey, {}, void 0, false, {
-            fileName: _jsxFileName,
-            lineNumber: 163,
-            columnNumber: 39
-          }, _this), type === 'search' && /*#__PURE__*/_jsxDEV(IconSearch, {}, void 0, false, {
-            fileName: _jsxFileName,
-            lineNumber: 164,
-            columnNumber: 37
-          }, _this), type === 'url' && /*#__PURE__*/_jsxDEV(Text, {
-            variant: 'paragraph-small',
-            children: "https://"
-          }, void 0, false, {
-            fileName: _jsxFileName,
-            lineNumber: 166,
-            columnNumber: 17
-          }, _this)]
-        }, void 0, true, {
-          fileName: _jsxFileName,
-          lineNumber: 151,
-          columnNumber: 13
-        }, _this), /*#__PURE__*/_jsxDEV("input", Object.assign({
-          type: type,
-          style: {
-            backgroundColor: grayed === 'grayish' && 'var(--grayish)' || grayed && 'var(--gray-x-light)',
-            border: grayed && 0
-          },
-          className: styles['input-element'] + "\n              " + styles['input-url-email'] + " " + (!icon && 'rounded-sm') + "\n            " + ((outlined || grayed) && styles['outlined-input'])
-        }, props), void 0, false, {
-          fileName: _jsxFileName,
-          lineNumber: 170,
-          columnNumber: 11
-        }, _this)]
-      }, void 0, true, {
-        fileName: _jsxFileName,
-        lineNumber: 149,
-        columnNumber: 9
-      }, _this)
-    }, void 0, false, {
-      fileName: _jsxFileName,
-      lineNumber: 148,
-      columnNumber: 7
-    }, _this), /*#__PURE__*/_jsxDEV("div", {
-      children: error && /*#__PURE__*/_jsxDEV(Text, {
-        variant: 'paragraph-tiny',
-        className: 'error-field-text text-left',
-        children: error
-      }, void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 187,
-        columnNumber: 11
-      }, _this)
-    }, void 0, false, {
-      fileName: _jsxFileName,
-      lineNumber: 185,
-      columnNumber: 7
-    }, _this)]
-  }, void 0, true, {
-    fileName: _jsxFileName,
-    lineNumber: 146,
-    columnNumber: 5
-  }, _this);
+    }), /*#__PURE__*/React.createElement(AutoComplete, _extends({
+      options: options,
+      open: openAutoComplete,
+      ref: inputRef,
+      style: {
+        width: '100%',
+        height: 'auto'
+      },
+      onBlur: handleBlur,
+      onFocus: function onFocus() {
+        return setOpenAutoComplete(true);
+      },
+      filterOption: function filterOption(inputValue, option) {
+        return handleFilterOption(inputValue, option);
+      }
+    }, props, {
+      "data-testid": 'autocomplete-' + props['data-testid']
+    }), /*#__PURE__*/React.createElement("input", {
+      type: "text",
+      className: "".concat(styles['input-element'], " ").concat(styles['input-text'], " ").concat(errorClass),
+      "data-testid": props['data-testid']
+    })), error && /*#__PURE__*/React.createElement(Text, {
+      variant: 'paragraph-tiny',
+      className: 'error-field-text'
+    }, error), openAutoComplete ? /*#__PURE__*/React.createElement(IconChevronUp, {
+      size: 8,
+      className: styles['auto-complete-drop-icon']
+    }) : /*#__PURE__*/React.createElement(IconChevronDown, {
+      size: 8,
+      className: styles['auto-complete-drop-icon'],
+      onClick: focusInput
+    }));
+  }
+  return /*#__PURE__*/React.createElement("div", null, label && /*#__PURE__*/React.createElement(Label, {
+    label: label,
+    required: required,
+    info: labelInfo
+  }), /*#__PURE__*/React.createElement("div", {
+    className: styles['input-container']
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "".concat(styles['input-url-email-container'], " ").concat(errorClass)
+  }, icon && /*#__PURE__*/React.createElement("div", {
+    className: styles['input-side'],
+    style: {
+      backgroundColor: outlined && 'transparent' || grayed === 'grayish' && 'var(--grayish)' || grayed && 'var(--gray-x-light)',
+      border: grayed && 0,
+      color: grayed && 'var(--dark)'
+    }
+  }, type === 'email' && /*#__PURE__*/React.createElement(IconEmail, null), type === 'password' && /*#__PURE__*/React.createElement(IconKey, null), type === 'search' && /*#__PURE__*/React.createElement(IconSearch, null), type === 'url' && /*#__PURE__*/React.createElement(Text, {
+    variant: 'paragraph-small'
+  }, "https://")), /*#__PURE__*/React.createElement("input", _extends({
+    type: type,
+    style: {
+      backgroundColor: grayed === 'grayish' && 'var(--grayish)' || grayed && 'var(--gray-x-light)',
+      border: grayed && 0
+    },
+    className: "".concat(styles['input-element'], "\n              ").concat(styles['input-url-email'], " ").concat(!icon && 'rounded-sm', "\n            ").concat((outlined || grayed) && styles['outlined-input'])
+  }, props)))), /*#__PURE__*/React.createElement("div", null, error && /*#__PURE__*/React.createElement(Text, {
+    variant: 'paragraph-tiny',
+    className: 'error-field-text text-left'
+  }, error)));
 };
 export default Input;
 export var PhoneNumberInput = function PhoneNumberInput(_ref2) {
@@ -296,77 +177,37 @@ export var PhoneNumberInput = function PhoneNumberInput(_ref2) {
     grayed = _ref2.grayed,
     value = _ref2.value,
     onChange = _ref2.onChange,
-    props = _objectWithoutPropertiesLoose(_ref2, _excluded2);
+    props = _objectWithoutProperties(_ref2, _excluded2);
   var errorClass = error ? 'error-field' : '';
-  return /*#__PURE__*/_jsxDEV("div", {
-    children: [label && /*#__PURE__*/_jsxDEV(Label, {
-      label: label,
-      required: required,
-      info: labelInfo
-    }, void 0, false, {
-      fileName: _jsxFileName,
-      lineNumber: 220,
-      columnNumber: 17
-    }, _this), /*#__PURE__*/_jsxDEV("div", {
-      className: styles['input-container'],
-      children: /*#__PURE__*/_jsxDEV("div", {
-        className: styles['input-url-email-container'] + " " + errorClass,
-        children: [prefixIcon && /*#__PURE__*/_jsxDEV("div", {
-          className: styles['input-side'],
-          style: {
-            backgroundColor: outlined && 'transparent' || grayed && 'var(--gray-x-light)',
-            border: grayed && 0,
-            color: grayed && 'var(--dark)'
-          },
-          children: prefixIcon
-        }, void 0, false, {
-          fileName: _jsxFileName,
-          lineNumber: 224,
-          columnNumber: 13
-        }, _this), /*#__PURE__*/_jsxDEV(PhoneInput, Object.assign({
-          specialLabel: "",
-          country: country,
-          className: styles['input-element'] + " " + styles['input-text'] + " " + errorClass,
-          inputStyle: {
-            width: '100%'
-          },
-          placeholder: placeholder,
-          onChange: onChange,
-          value: value
-        }, props), void 0, false, {
-          fileName: _jsxFileName,
-          lineNumber: 237,
-          columnNumber: 11
-        }, _this)]
-      }, void 0, true, {
-        fileName: _jsxFileName,
-        lineNumber: 222,
-        columnNumber: 9
-      }, _this)
-    }, void 0, false, {
-      fileName: _jsxFileName,
-      lineNumber: 221,
-      columnNumber: 7
-    }, _this), /*#__PURE__*/_jsxDEV("div", {
-      children: error && /*#__PURE__*/_jsxDEV(Text, {
-        variant: 'paragraph-tiny',
-        className: 'error-field-text text-left',
-        children: error
-      }, void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 253,
-        columnNumber: 11
-      }, _this)
-    }, void 0, false, {
-      fileName: _jsxFileName,
-      lineNumber: 251,
-      columnNumber: 7
-    }, _this)]
-  }, void 0, true, {
-    fileName: _jsxFileName,
-    lineNumber: 219,
-    columnNumber: 5
-  }, _this);
+  return /*#__PURE__*/React.createElement("div", null, label && /*#__PURE__*/React.createElement(Label, {
+    label: label,
+    required: required,
+    info: labelInfo
+  }), /*#__PURE__*/React.createElement("div", {
+    className: styles['input-container']
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "".concat(styles['input-url-email-container'], " ").concat(errorClass)
+  }, prefixIcon && /*#__PURE__*/React.createElement("div", {
+    className: styles['input-side'],
+    style: {
+      backgroundColor: outlined && 'transparent' || grayed && 'var(--gray-x-light)',
+      border: grayed && 0,
+      color: grayed && 'var(--dark)'
+    }
+  }, prefixIcon), /*#__PURE__*/React.createElement(PhoneInput, _extends({
+    specialLabel: "",
+    country: country,
+    className: "".concat(styles['input-element'], " ").concat(styles['input-text'], " ").concat(errorClass),
+    inputStyle: {
+      width: '100%'
+    },
+    placeholder: placeholder,
+    onChange: onChange,
+    value: value
+  }, props)))), /*#__PURE__*/React.createElement("div", null, error && /*#__PURE__*/React.createElement(Text, {
+    variant: 'paragraph-tiny',
+    className: 'error-field-text text-left'
+  }, error)));
 };
 Input.propTypes = {
   type: PropTypes.oneOf(['text', 'email', 'url', 'autocomplete', 'password', 'search']),

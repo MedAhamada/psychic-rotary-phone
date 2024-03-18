@@ -1,10 +1,8 @@
-import _objectWithoutPropertiesLoose from "/media/mohamed/Nouveau nom3/workspace/hello-jonzz/eskimoz/src/eskimoz-ui/node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js";
 var _excluded = ["text", "variant", "size", "icon", "disabled", "width", "className"],
   _excluded2 = ["text", "open", "className", "placeholder"];
-var _jsxFileName = "/media/mohamed/Nouveau nom3/workspace/hello-jonzz/eskimoz/src/eskimoz-ui/src/lib/button/button.jsx",
-  _this = this;
-import "core-js/modules/es.array.slice.js";
-import "core-js/modules/es.object.assign.js";
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 import React from 'react';
 import PropTypes from 'prop-types';
 import Text from '../text/text';
@@ -30,7 +28,7 @@ import { IconChevronDown, IconChevronUp } from '../icons';
  * @param  {string}   className
  * @param props
  */
-import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
+
 export var Button = function Button(_ref) {
   var _ref$text = _ref.text,
     text = _ref$text === void 0 ? '' : _ref$text,
@@ -44,20 +42,15 @@ export var Button = function Button(_ref) {
     width = _ref$width === void 0 ? 'fit' : _ref$width,
     _ref$className = _ref.className,
     className = _ref$className === void 0 ? '' : _ref$className,
-    props = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var buttonClass = styles['button'] + " " + styles["button-" + variant] + " " + (width ? styles["width-" + width] : '') + " ";
+    props = _objectWithoutProperties(_ref, _excluded);
+  var buttonClass = "".concat(styles['button'], " ").concat(styles["button-".concat(variant)], " ").concat(width ? styles["width-".concat(width)] : '', " ");
   if (variant === 'primary' || variant === 'secondary') {
-    buttonClass += "" + (size ? styles["button-" + size] : '');
+    buttonClass += "".concat(size ? styles["button-".concat(size)] : '');
   }
-  return /*#__PURE__*/_jsxDEV("button", Object.assign({}, props, {
-    className: buttonClass + " " + className,
-    disabled: disabled,
-    children: [icon && variant !== 'danger' ? icon : null, variant !== 'icon' && text]
-  }), void 0, true, {
-    fileName: _jsxFileName,
-    lineNumber: 46,
-    columnNumber: 5
-  }, _this);
+  return /*#__PURE__*/React.createElement("button", _extends({}, props, {
+    className: "".concat(buttonClass, " ").concat(className),
+    disabled: disabled
+  }), icon && variant !== 'danger' ? icon : null, variant !== 'icon' && text);
 };
 Button.propTypes = {
   text: PropTypes.string,
@@ -80,47 +73,24 @@ export var ButtonDropdown = function ButtonDropdown(_ref2) {
     open = _ref2.open,
     className = _ref2.className,
     placeholder = _ref2.placeholder,
-    props = _objectWithoutPropertiesLoose(_ref2, _excluded2);
-  return /*#__PURE__*/_jsxDEV("button", Object.assign({
+    props = _objectWithoutProperties(_ref2, _excluded2);
+  return /*#__PURE__*/React.createElement("button", _extends({
     type: 'button'
   }, props, {
-    className: styles['dropdown-button'] + " " + className,
-    "aria-label": "btn dropdown button",
-    children: [!text && placeholder && /*#__PURE__*/_jsxDEV(Text, {
-      variant: 'paragraph-small',
-      className: styles['dropdown-button-placeholder'],
-      children: placeholder
-    }, void 0, false, {
-      fileName: _jsxFileName,
-      lineNumber: 95,
-      columnNumber: 9
-    }, _this), text && /*#__PURE__*/_jsxDEV(Text, {
-      variant: 'paragraph-small',
-      children: text.length > 40 ? text.slice(0, 40) + "..." : text
-    }, void 0, false, {
-      fileName: _jsxFileName,
-      lineNumber: 103,
-      columnNumber: 9
-    }, _this), open ? /*#__PURE__*/_jsxDEV(IconChevronUp, {
-      size: 8,
-      className: styles['arrow-icon'] + " menu-options-dropdown-icon"
-    }, void 0, false, {
-      fileName: _jsxFileName,
-      lineNumber: 108,
-      columnNumber: 9
-    }, _this) : /*#__PURE__*/_jsxDEV(IconChevronDown, {
-      size: 8,
-      className: styles['arrow-icon'] + " menu-options-dropdown-icon"
-    }, void 0, false, {
-      fileName: _jsxFileName,
-      lineNumber: 113,
-      columnNumber: 9
-    }, _this)]
-  }), void 0, true, {
-    fileName: _jsxFileName,
-    lineNumber: 88,
-    columnNumber: 5
-  }, _this);
+    className: "".concat(styles['dropdown-button'], " ").concat(className),
+    "aria-label": "btn dropdown button"
+  }), !text && placeholder && /*#__PURE__*/React.createElement(Text, {
+    variant: 'paragraph-small',
+    className: styles['dropdown-button-placeholder']
+  }, placeholder), text && /*#__PURE__*/React.createElement(Text, {
+    variant: 'paragraph-small'
+  }, text.length > 40 ? "".concat(text.slice(0, 40), "...") : text), open ? /*#__PURE__*/React.createElement(IconChevronUp, {
+    size: 8,
+    className: "".concat(styles['arrow-icon'], " menu-options-dropdown-icon")
+  }) : /*#__PURE__*/React.createElement(IconChevronDown, {
+    size: 8,
+    className: "".concat(styles['arrow-icon'], " menu-options-dropdown-icon")
+  }));
 };
 ButtonDropdown.propTypes = {
   text: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),

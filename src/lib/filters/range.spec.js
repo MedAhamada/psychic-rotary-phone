@@ -1,22 +1,15 @@
-var _jsxFileName = "/media/mohamed/Nouveau nom3/workspace/hello-jonzz/eskimoz/src/eskimoz-ui/src/lib/filters/range.spec.jsx",
-  _this = this;
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import Range from './range';
-import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
 describe('Range component', function () {
   var onFilter = jest.fn();
   var onReset = jest.fn();
   beforeEach(function () {
-    render( /*#__PURE__*/_jsxDEV(Range, {
+    render( /*#__PURE__*/React.createElement(Range, {
       onFilter: onFilter,
       onReset: onReset,
       colAccessor: 'test'
-    }, void 0, false, {
-      fileName: _jsxFileName,
-      lineNumber: 11,
-      columnNumber: 7
-    }, _this));
+    }));
   });
   it('should open and close the filter when the button is clicked', function () {
     var button = screen.getByTestId('open-test-range-filter');

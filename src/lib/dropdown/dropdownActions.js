@@ -1,9 +1,7 @@
-import _objectWithoutPropertiesLoose from "/media/mohamed/Nouveau nom3/workspace/hello-jonzz/eskimoz/src/eskimoz-ui/node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js";
 var _excluded = ["open", "onClose", "onOpenChange", "triggerer", "options", "placement", "className"];
-var _jsxFileName = "/media/mohamed/Nouveau nom3/workspace/hello-jonzz/eskimoz/src/eskimoz-ui/src/lib/dropdown/dropdownActions.jsx",
-  _this = this;
-import "core-js/modules/es.array.map.js";
-import "core-js/modules/es.object.assign.js";
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import styles from './dropdown.module.css';
@@ -20,7 +18,6 @@ import Text from '../text/text';
  * @param  className
  * @param props
  */
-import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
 export var DropdownActions = function DropdownActions(_ref) {
   var open = _ref.open,
     onClose = _ref.onClose,
@@ -31,7 +28,7 @@ export var DropdownActions = function DropdownActions(_ref) {
     placement = _ref$placement === void 0 ? 'left' : _ref$placement,
     _ref$className = _ref.className,
     className = _ref$className === void 0 ? '' : _ref$className,
-    props = _objectWithoutPropertiesLoose(_ref, _excluded);
+    props = _objectWithoutProperties(_ref, _excluded);
   var btnRef = useRef(null);
   var contentRef = useRef(null);
   var handleBlurMenu = function handleBlurMenu(event) {
@@ -59,60 +56,31 @@ export var DropdownActions = function DropdownActions(_ref) {
       transform: 'translateX(-50%)'
     };
   }
-  return /*#__PURE__*/_jsxDEV("div", {
-    className: "relative",
-    children: [/*#__PURE__*/_jsxDEV("button", Object.assign({
-      onClick: function onClick(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        onOpenChange();
-      },
-      ref: btnRef,
-      className: "flex-center " + className
-    }, props, {
-      children: triggerer || /*#__PURE__*/_jsxDEV(IconDots, {
-        size: 22
-      }, void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 71,
-        columnNumber: 23
-      }, _this)
-    }), void 0, false, {
-      fileName: _jsxFileName,
-      lineNumber: 61,
-      columnNumber: 7
-    }, _this), open && /*#__PURE__*/_jsxDEV("div", {
-      className: styles['dropdown-action-container'],
-      ref: contentRef,
-      style: placementStyle,
-      children: options.map(function (option) {
-        return /*#__PURE__*/_jsxDEV("button", {
-          className: styles['dropdown-menu-option'],
-          onClick: option.action,
-          children: [option.icon, /*#__PURE__*/_jsxDEV(Text, {
-            variant: 'paragraph-small',
-            children: option.title
-          }, void 0, false, {
-            fileName: _jsxFileName,
-            lineNumber: 86,
-            columnNumber: 15
-          }, _this)]
-        }, option.title, true, {
-          fileName: _jsxFileName,
-          lineNumber: 80,
-          columnNumber: 13
-        }, _this);
-      })
-    }, void 0, false, {
-      fileName: _jsxFileName,
-      lineNumber: 74,
-      columnNumber: 9
-    }, _this)]
-  }, void 0, true, {
-    fileName: _jsxFileName,
-    lineNumber: 60,
-    columnNumber: 5
-  }, _this);
+  return /*#__PURE__*/React.createElement("div", {
+    className: "relative"
+  }, /*#__PURE__*/React.createElement("button", _extends({
+    onClick: function onClick(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      onOpenChange();
+    },
+    ref: btnRef,
+    className: "flex-center ".concat(className)
+  }, props), triggerer || /*#__PURE__*/React.createElement(IconDots, {
+    size: 22
+  })), open && /*#__PURE__*/React.createElement("div", {
+    className: styles['dropdown-action-container'],
+    ref: contentRef,
+    style: placementStyle
+  }, options.map(function (option) {
+    return /*#__PURE__*/React.createElement("button", {
+      key: option.title,
+      className: styles['dropdown-menu-option'],
+      onClick: option.action
+    }, option.icon, /*#__PURE__*/React.createElement(Text, {
+      variant: 'paragraph-small'
+    }, option.title));
+  })));
 };
 DropdownActions.propTypes = {
   options: PropTypes.array,

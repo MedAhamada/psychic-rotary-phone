@@ -1,10 +1,6 @@
-var _jsxFileName = "/media/mohamed/Nouveau nom3/workspace/hello-jonzz/eskimoz/src/eskimoz-ui/src/lib/dropdown/dropdown.spec.jsx",
-  _this = this;
-import "core-js/modules/es.object.assign.js";
 import React from 'react';
 import { render } from '@testing-library/react';
 import CheckboxDropdown, { Dropdown, DropdownSearch, RadioDropdown } from './dropdown';
-import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
 describe('RadioDropdown Component', function () {
   var defaultProps = {
     name: 'radioDropdown',
@@ -20,11 +16,7 @@ describe('RadioDropdown Component', function () {
     width: '400px'
   };
   it('renders successfully', function () {
-    var _render = render( /*#__PURE__*/_jsxDEV(RadioDropdown, Object.assign({}, defaultProps), void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 22,
-        columnNumber: 36
-      }, _this)),
+    var _render = render( /*#__PURE__*/React.createElement(RadioDropdown, defaultProps)),
       baseElement = _render.baseElement;
     expect(baseElement).toBeTruthy();
   });
@@ -45,11 +37,7 @@ describe('CheckboxDropdown Component', function () {
     width: '400px'
   };
   it('renders successfully', function () {
-    var _render2 = render( /*#__PURE__*/_jsxDEV(CheckboxDropdown, Object.assign({}, defaultProps), void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 41,
-        columnNumber: 36
-      }, _this)),
+    var _render2 = render( /*#__PURE__*/React.createElement(CheckboxDropdown, defaultProps)),
       baseElement = _render2.baseElement;
     expect(baseElement).toBeTruthy();
   });
@@ -70,11 +58,7 @@ describe('Dropdown Component', function () {
     width: '200px'
   };
   it('renders successfully', function () {
-    var _render3 = render( /*#__PURE__*/_jsxDEV(Dropdown, Object.assign({}, defaultProps), void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 60,
-        columnNumber: 36
-      }, _this)),
+    var _render3 = render( /*#__PURE__*/React.createElement(Dropdown, defaultProps)),
       baseElement = _render3.baseElement;
     expect(baseElement).toBeTruthy();
   });
@@ -95,11 +79,7 @@ describe('DropdownSearch Component', function () {
     width: '400px'
   };
   it('renders successfully', function () {
-    var _render4 = render( /*#__PURE__*/_jsxDEV(DropdownSearch, Object.assign({}, defaultProps), void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 79,
-        columnNumber: 36
-      }, _this)),
+    var _render4 = render( /*#__PURE__*/React.createElement(DropdownSearch, defaultProps)),
       baseElement = _render4.baseElement;
     expect(baseElement).toBeTruthy();
   });

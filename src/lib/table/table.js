@@ -1,14 +1,16 @@
-import _objectWithoutPropertiesLoose from "/media/mohamed/Nouveau nom3/workspace/hello-jonzz/eskimoz/src/eskimoz-ui/node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js";
 var _excluded = ["entriesPerPage", "data", "columns", "expandable", "usePagination", "checkableRows", "onCheckRowChange", "isLoading", "cta", "paginationSeparatorText", "paginationResultText", "paginationEntriesText"];
-var _jsxFileName = "/media/mohamed/Nouveau nom3/workspace/hello-jonzz/eskimoz/src/eskimoz-ui/src/lib/table/table.jsx",
-  _this = this;
-import "core-js/modules/es.array.concat.js";
-import "core-js/modules/es.array.filter.js";
-import "core-js/modules/es.array.includes.js";
-import "core-js/modules/es.array.map.js";
-import "core-js/modules/es.array.some.js";
-import "core-js/modules/es.object.to-string.js";
-import "core-js/modules/es.string.includes.js";
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 import React, { Fragment, useState } from 'react';
 import { DateFilter, RangeFilter, SortingButton, TagsFilter } from '../filters';
 import Pagination from '../pagination/pagination';
@@ -62,7 +64,6 @@ import { IconChevronDown, IconChevronRight, IconInfo } from '../icons';
  *   }}
  * />;
  */
-import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
 export var Table = function Table(_ref) {
   var _ref$entriesPerPage = _ref.entriesPerPage,
     entriesPerPage = _ref$entriesPerPage === void 0 ? true : _ref$entriesPerPage,
@@ -77,18 +78,20 @@ export var Table = function Table(_ref) {
     paginationSeparatorText = _ref.paginationSeparatorText,
     paginationResultText = _ref.paginationResultText,
     paginationEntriesText = _ref.paginationEntriesText,
-    props = _objectWithoutPropertiesLoose(_ref, _excluded);
+    props = _objectWithoutProperties(_ref, _excluded);
   var _useState = useState([]),
-    expandedRows = _useState[0],
-    setExpandedRows = _useState[1];
-  var _useState2 = useState([]),
-    checkedRows = _useState2[0],
-    setCheckedRows = _useState2[1];
+    _useState2 = _slicedToArray(_useState, 2),
+    expandedRows = _useState2[0],
+    setExpandedRows = _useState2[1];
+  var _useState3 = useState([]),
+    _useState4 = _slicedToArray(_useState3, 2),
+    checkedRows = _useState4[0],
+    setCheckedRows = _useState4[1];
   var handleRowClick = function handleRowClick(index) {
     setExpandedRows(function (prevRows) {
       return prevRows.includes(index) ? prevRows.filter(function (rowIndex) {
         return rowIndex !== index;
-      }) : [].concat(prevRows, [index]);
+      }) : [].concat(_toConsumableArray(prevRows), [index]);
     });
   };
   var isEqual = function isEqual(obj1, obj2) {
@@ -104,262 +107,119 @@ export var Table = function Table(_ref) {
           return !isEqual(row, item);
         });
       } else {
-        updatedRows = [].concat(checkedRows, [item]);
+        updatedRows = [].concat(_toConsumableArray(checkedRows), [item]);
       }
       onCheckRowChange(updatedRows);
       return updatedRows;
     });
   };
-  return /*#__PURE__*/_jsxDEV("div", {
-    className: "" + styles['table-container'],
-    children: [/*#__PURE__*/_jsxDEV("table", {
-      className: "" + styles['table'],
-      "data-testid": 'table-element',
-      children: [/*#__PURE__*/_jsxDEV("thead", {
-        className: "" + styles['thead'],
-        children: /*#__PURE__*/_jsxDEV("tr", {
-          children: [columns.map(function (column) {
-            return /*#__PURE__*/_jsxDEV("th", {
-              "data-testid": "th-" + column.accessor,
-              children: /*#__PURE__*/_jsxDEV("div", {
-                className: "flex-start relative gap-xs",
-                children: [/*#__PURE__*/_jsxDEV(Text, {
-                  variant: 'heading-5',
-                  children: column.Header
-                }, void 0, false, {
-                  fileName: _jsxFileName,
-                  lineNumber: 104,
-                  columnNumber: 19
-                }, _this), column.info && /*#__PURE__*/_jsxDEV(Popover, {
-                  content: column.info,
-                  children: /*#__PURE__*/_jsxDEV("span", {
-                    children: /*#__PURE__*/_jsxDEV(IconInfo, {}, void 0, false, {
-                      fileName: _jsxFileName,
-                      lineNumber: 108,
-                      columnNumber: 25
-                    }, _this)
-                  }, void 0, false, {
-                    fileName: _jsxFileName,
-                    lineNumber: 107,
-                    columnNumber: 23
-                  }, _this)
-                }, void 0, false, {
-                  fileName: _jsxFileName,
-                  lineNumber: 106,
-                  columnNumber: 21
-                }, _this), column.sorting && /*#__PURE__*/_jsxDEV(SortingButton, {
-                  sortingAction: column.sortAction,
-                  sort: column.sorting,
-                  "data-testid": "sorting-button-" + column.accessor
-                }, void 0, false, {
-                  fileName: _jsxFileName,
-                  lineNumber: 113,
-                  columnNumber: 21
-                }, _this), column.filterType === 'date' && /*#__PURE__*/_jsxDEV(DateFilter, {
-                  onFilter: column.filterAction,
-                  onReset: column.resetFilter,
-                  colAccessor: column.accessor
-                }, void 0, false, {
-                  fileName: _jsxFileName,
-                  lineNumber: 120,
-                  columnNumber: 21
-                }, _this), column.filterType === 'range' && /*#__PURE__*/_jsxDEV(RangeFilter, {
-                  onFilter: column.filterAction,
-                  onReset: column.resetFilter,
-                  colAccessor: column.accessor
-                }, void 0, false, {
-                  fileName: _jsxFileName,
-                  lineNumber: 127,
-                  columnNumber: 21
-                }, _this), column.filterType === 'tags' && /*#__PURE__*/_jsxDEV(TagsFilter, {
-                  options: column.tagsOptions,
-                  onFilter: column.filterAction,
-                  onReset: column.resetFilter,
-                  colAccessor: column.accessor
-                }, void 0, false, {
-                  fileName: _jsxFileName,
-                  lineNumber: 134,
-                  columnNumber: 21
-                }, _this)]
-              }, void 0, true, {
-                fileName: _jsxFileName,
-                lineNumber: 103,
-                columnNumber: 17
-              }, _this)
-            }, column.accessor, false, {
-              fileName: _jsxFileName,
-              lineNumber: 102,
-              columnNumber: 15
-            }, _this);
-          }), checkableRows && /*#__PURE__*/_jsxDEV("th", {}, void 0, false, {
-            fileName: _jsxFileName,
-            lineNumber: 144,
-            columnNumber: 31
-          }, _this)]
-        }, void 0, true, {
-          fileName: _jsxFileName,
-          lineNumber: 100,
-          columnNumber: 11
-        }, _this)
-      }, void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 99,
-        columnNumber: 9
-      }, _this), /*#__PURE__*/_jsxDEV("tbody", {
-        className: "" + styles['tbody'],
-        children: data && data.map(function (item, i) {
-          return /*#__PURE__*/_jsxDEV(Fragment, {
-            children: [/*#__PURE__*/_jsxDEV("tr", {
-              "data-testid": "tr-" + i,
-              onClick: function onClick() {
-                return handleRowClick(i);
-              },
-              className: expandable != null && expandable.rowExpandable(item) && expandedRows.includes(i) || checkedRows.some(function (row) {
-                return isEqual(row, item);
-              }) ? styles['active-row'] : '',
-              children: [columns.map(function (column, index) {
-                return /*#__PURE__*/_jsxDEV("td", {
-                  onClick: function onClick() {
-                    return column.onCellClick && column.onCellClick(item);
-                  },
-                  style: column.style,
-                  className: column.className,
-                  role: 'cell',
-                  "data-testid": "td-" + column.accessor + "-" + i,
-                  children: /*#__PURE__*/_jsxDEV("div", {
-                    className: 'w-full ' + (expandable == null ? void 0 : expandable.rowExpandable(item)) ? 'flex-y-center gap-md' : '',
-                    children: [index === 0 && (expandable == null ? void 0 : expandable.rowExpandable(item)) && (expandedRows.includes(i) ? /*#__PURE__*/_jsxDEV(IconChevronDown, {
-                      style: {
-                        color: 'var(--gray-dark)'
-                      },
-                      size: 12
-                    }, void 0, false, {
-                      fileName: _jsxFileName,
-                      lineNumber: 184,
-                      columnNumber: 29
-                    }, _this) : /*#__PURE__*/_jsxDEV(IconChevronRight, {
-                      style: {
-                        color: 'var(--gray-dark)'
-                      },
-                      size: 12
-                    }, void 0, false, {
-                      fileName: _jsxFileName,
-                      lineNumber: 189,
-                      columnNumber: 29
-                    }, _this)), column.render ? /*#__PURE__*/_jsxDEV("div", {
-                      className: 'w-full flex-wrap gap-sm',
-                      children: column.render(item)
-                    }, void 0, false, {
-                      fileName: _jsxFileName,
-                      lineNumber: 196,
-                      columnNumber: 27
-                    }, _this) : /*#__PURE__*/_jsxDEV(Text, {
-                      variant: 'paragraph-small',
-                      children: item[column.accessor]
-                    }, void 0, false, {
-                      fileName: _jsxFileName,
-                      lineNumber: 200,
-                      columnNumber: 27
-                    }, _this)]
-                  }, void 0, true, {
-                    fileName: _jsxFileName,
-                    lineNumber: 174,
-                    columnNumber: 23
-                  }, _this)
-                }, column.accessor, false, {
-                  fileName: _jsxFileName,
-                  lineNumber: 164,
-                  columnNumber: 21
-                }, _this);
-              }), checkableRows && /*#__PURE__*/_jsxDEV("td", {
-                className: "" + (checkedRows.some(function (row) {
-                  return isEqual(row, item);
-                }) ? styles['checked-row'] : ''),
-                children: /*#__PURE__*/_jsxDEV(Checkbox, {
-                  onChange: function onChange() {
-                    return handleCheckRow(item);
-                  },
-                  onClick: function onClick(e) {
-                    return e.stopPropagation();
-                  },
-                  checked: checkedRows.some(function (row) {
-                    return isEqual(row, item);
-                  })
-                }, void 0, false, {
-                  fileName: _jsxFileName,
-                  lineNumber: 215,
-                  columnNumber: 23
-                }, _this)
-              }, void 0, false, {
-                fileName: _jsxFileName,
-                lineNumber: 208,
-                columnNumber: 21
-              }, _this)]
-            }, void 0, true, {
-              fileName: _jsxFileName,
-              lineNumber: 152,
-              columnNumber: 17
-            }, _this), (expandable == null ? void 0 : expandable.rowExpandable(item)) && expandedRows.includes(i) && expandable.renderExpandedRow(item)]
-          }, i, true, {
-            fileName: _jsxFileName,
-            lineNumber: 151,
-            columnNumber: 15
-          }, _this);
-        })
-      }, void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 148,
-        columnNumber: 9
-      }, _this)]
-    }, void 0, true, {
-      fileName: _jsxFileName,
-      lineNumber: 98,
-      columnNumber: 7
-    }, _this), /*#__PURE__*/_jsxDEV("div", {
-      className: styles['tfoot'],
-      children: [isLoading && /*#__PURE__*/_jsxDEV("div", {
-        className: styles['tfoot-row'] + " flex-center",
-        children: /*#__PURE__*/_jsxDEV(Loader, {}, void 0, false, {
-          fileName: _jsxFileName,
-          lineNumber: 234,
-          columnNumber: 13
-        }, _this)
-      }, void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 233,
-        columnNumber: 11
-      }, _this), cta && /*#__PURE__*/_jsxDEV("div", {
-        className: "" + styles['tfoot-row'],
-        children: cta
-      }, void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 237,
-        columnNumber: 17
-      }, _this)]
-    }, void 0, true, {
-      fileName: _jsxFileName,
-      lineNumber: 231,
-      columnNumber: 7
-    }, _this), usePagination && /*#__PURE__*/_jsxDEV(Pagination, {
-      total: props.total,
-      pageSize: props.pageSize,
-      currentPage: props.currentPage,
-      onChange: function onChange(page, pageSize) {
-        return props.onChangePagination(page, pageSize);
+  return /*#__PURE__*/React.createElement("div", {
+    className: "".concat(styles['table-container'])
+  }, /*#__PURE__*/React.createElement("table", {
+    className: "".concat(styles['table']),
+    "data-testid": 'table-element'
+  }, /*#__PURE__*/React.createElement("thead", {
+    className: "".concat(styles['thead'])
+  }, /*#__PURE__*/React.createElement("tr", null, columns.map(function (column) {
+    return /*#__PURE__*/React.createElement("th", {
+      key: column.accessor,
+      "data-testid": "th-".concat(column.accessor)
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "flex-start relative gap-xs"
+    }, /*#__PURE__*/React.createElement(Text, {
+      variant: 'heading-5'
+    }, column.Header), column.info && /*#__PURE__*/React.createElement(Popover, {
+      content: column.info
+    }, /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement(IconInfo, null))), column.sorting && /*#__PURE__*/React.createElement(SortingButton, {
+      sortingAction: column.sortAction,
+      sort: column.sorting,
+      "data-testid": "sorting-button-".concat(column.accessor)
+    }), column.filterType === 'date' && /*#__PURE__*/React.createElement(DateFilter, {
+      onFilter: column.filterAction,
+      onReset: column.resetFilter,
+      colAccessor: column.accessor
+    }), column.filterType === 'range' && /*#__PURE__*/React.createElement(RangeFilter, {
+      onFilter: column.filterAction,
+      onReset: column.resetFilter,
+      colAccessor: column.accessor
+    }), column.filterType === 'tags' && /*#__PURE__*/React.createElement(TagsFilter, {
+      options: column.tagsOptions,
+      onFilter: column.filterAction,
+      onReset: column.resetFilter,
+      colAccessor: column.accessor
+    })));
+  }), checkableRows && /*#__PURE__*/React.createElement("th", null))), /*#__PURE__*/React.createElement("tbody", {
+    className: "".concat(styles['tbody'])
+  }, data && data.map(function (item, i) {
+    return /*#__PURE__*/React.createElement(Fragment, {
+      key: i
+    }, /*#__PURE__*/React.createElement("tr", {
+      "data-testid": "tr-".concat(i),
+      onClick: function onClick() {
+        return handleRowClick(i);
       },
-      separatorText: paginationSeparatorText,
-      resultText: paginationResultText,
-      entriesPerPage: entriesPerPage,
-      entriesText: paginationEntriesText
-    }, void 0, false, {
-      fileName: _jsxFileName,
-      lineNumber: 241,
-      columnNumber: 9
-    }, _this)]
-  }, void 0, true, {
-    fileName: _jsxFileName,
-    lineNumber: 97,
-    columnNumber: 5
-  }, _this);
+      className: expandable !== null && expandable !== void 0 && expandable.rowExpandable(item) && expandedRows.includes(i) || checkedRows.some(function (row) {
+        return isEqual(row, item);
+      }) ? styles['active-row'] : ''
+    }, columns.map(function (column, index) {
+      return /*#__PURE__*/React.createElement("td", {
+        key: column.accessor,
+        onClick: function onClick() {
+          return column.onCellClick && column.onCellClick(item);
+        },
+        style: column.style,
+        className: column.className,
+        role: 'cell',
+        "data-testid": "td-".concat(column.accessor, "-").concat(i)
+      }, /*#__PURE__*/React.createElement("div", {
+        className: 'w-full ' + (expandable === null || expandable === void 0 ? void 0 : expandable.rowExpandable(item)) ? 'flex-y-center gap-md' : ''
+      }, index === 0 && (expandable === null || expandable === void 0 ? void 0 : expandable.rowExpandable(item)) && (expandedRows.includes(i) ? /*#__PURE__*/React.createElement(IconChevronDown, {
+        style: {
+          color: 'var(--gray-dark)'
+        },
+        size: 12
+      }) : /*#__PURE__*/React.createElement(IconChevronRight, {
+        style: {
+          color: 'var(--gray-dark)'
+        },
+        size: 12
+      })), column.render ? /*#__PURE__*/React.createElement("div", {
+        className: 'w-full flex-wrap gap-sm'
+      }, column.render(item)) : /*#__PURE__*/React.createElement(Text, {
+        variant: 'paragraph-small'
+      }, item[column.accessor])));
+    }), checkableRows && /*#__PURE__*/React.createElement("td", {
+      className: "".concat(checkedRows.some(function (row) {
+        return isEqual(row, item);
+      }) ? styles['checked-row'] : '')
+    }, /*#__PURE__*/React.createElement(Checkbox, {
+      onChange: function onChange() {
+        return handleCheckRow(item);
+      },
+      onClick: function onClick(e) {
+        return e.stopPropagation();
+      },
+      checked: checkedRows.some(function (row) {
+        return isEqual(row, item);
+      })
+    }))), (expandable === null || expandable === void 0 ? void 0 : expandable.rowExpandable(item)) && expandedRows.includes(i) && expandable.renderExpandedRow(item));
+  }))), /*#__PURE__*/React.createElement("div", {
+    className: styles['tfoot']
+  }, isLoading && /*#__PURE__*/React.createElement("div", {
+    className: "".concat(styles['tfoot-row'], " flex-center")
+  }, /*#__PURE__*/React.createElement(Loader, null)), cta && /*#__PURE__*/React.createElement("div", {
+    className: "".concat(styles['tfoot-row'])
+  }, cta)), usePagination && /*#__PURE__*/React.createElement(Pagination, {
+    total: props.total,
+    pageSize: props.pageSize,
+    currentPage: props.currentPage,
+    onChange: function onChange(page, pageSize) {
+      return props.onChangePagination(page, pageSize);
+    },
+    separatorText: paginationSeparatorText,
+    resultText: paginationResultText,
+    entriesPerPage: entriesPerPage,
+    entriesText: paginationEntriesText
+  }));
 };
 export default Table;

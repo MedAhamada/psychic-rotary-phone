@@ -1,9 +1,5 @@
-var _jsxFileName = "/media/mohamed/Nouveau nom3/workspace/hello-jonzz/eskimoz/src/eskimoz-ui/src/lib/languageSelect/languageSelect.stories.jsx",
-  _this = this;
-import "core-js/modules/es.object.assign.js";
 import React from 'react';
 import LanguageSelect from '../languageSelect/languageSelect';
-import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
 var meta = {
   title: 'LanguageSelect',
   component: LanguageSelect
@@ -26,11 +22,7 @@ var options = [{
   value: 'option-5'
 }];
 export var languageDropdown = function languageDropdown(args) {
-  return /*#__PURE__*/_jsxDEV(LanguageSelect, Object.assign({}, args), void 0, false, {
-    fileName: _jsxFileName,
-    lineNumber: 19,
-    columnNumber: 43
-  }, _this);
+  return /*#__PURE__*/React.createElement(LanguageSelect, args);
 };
 languageDropdown.args = {
   onSelect: function onSelect(items) {

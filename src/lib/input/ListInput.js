@@ -1,14 +1,17 @@
-import _objectWithoutPropertiesLoose from "/media/mohamed/Nouveau nom3/workspace/hello-jonzz/eskimoz/src/eskimoz-ui/node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js";
 var _excluded = ["label", "labelInfo", "limit", "required", "placeholder", "onInserted", "defaultItems", "error"];
-var _jsxFileName = "/media/mohamed/Nouveau nom3/workspace/hello-jonzz/eskimoz/src/eskimoz-ui/src/lib/input/ListInput.jsx",
-  _this = this;
-import "core-js/modules/es.array.concat.js";
-import "core-js/modules/es.array.filter.js";
-import "core-js/modules/es.array.map.js";
-import "core-js/modules/es.array.slice.js";
-import "core-js/modules/es.object.assign.js";
-import "core-js/modules/es.object.to-string.js";
-import "core-js/modules/es.string.trim.js";
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Text from '../text/text';
@@ -34,7 +37,6 @@ import Label from '../label/label';
  *    onInserted={(list) => console.log(list)}
  * />
  */
-import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
 var ListInput = function ListInput(_ref) {
   var label = _ref.label,
     labelInfo = _ref.labelInfo,
@@ -44,19 +46,22 @@ var ListInput = function ListInput(_ref) {
     onInserted = _ref.onInserted,
     defaultItems = _ref.defaultItems,
     error = _ref.error,
-    props = _objectWithoutPropertiesLoose(_ref, _excluded);
+    props = _objectWithoutProperties(_ref, _excluded);
   var _useState = useState(defaultItems || []),
-    items = _useState[0],
-    setItems = _useState[1];
-  var _useState2 = useState(''),
-    item = _useState2[0],
-    setItem = _useState2[1];
-  var _useState3 = useState(false),
-    pasted = _useState3[0],
-    setPasted = _useState3[1];
+    _useState2 = _slicedToArray(_useState, 2),
+    items = _useState2[0],
+    setItems = _useState2[1];
+  var _useState3 = useState(''),
+    _useState4 = _slicedToArray(_useState3, 2),
+    item = _useState4[0],
+    setItem = _useState4[1];
+  var _useState5 = useState(false),
+    _useState6 = _slicedToArray(_useState5, 2),
+    pasted = _useState6[0],
+    setPasted = _useState6[1];
   var pushLink = function pushLink() {
     if (item) {
-      var newItems = [].concat(items, [item]);
+      var newItems = [].concat(_toConsumableArray(items), [item]);
       setItems(newItems);
       onInserted(newItems);
       setItem('');
@@ -69,8 +74,8 @@ var ListInput = function ListInput(_ref) {
     } else if (e.key === 'Backspace' && !item && items.length > 0) {
       var poppedItem = items.pop() || '';
       setItem(poppedItem);
-      setItems([].concat(items));
-      onInserted([].concat(items));
+      setItems(_toConsumableArray(items));
+      onInserted(_toConsumableArray(items));
     }
   };
   var handlePaste = function handlePaste(event) {
@@ -80,7 +85,7 @@ var ListInput = function ListInput(_ref) {
     var lines = pastedText.split('\n').filter(function (line) {
       return line.trim() !== '';
     });
-    var newItems = [].concat(items, lines).slice(0, limit);
+    var newItems = [].concat(_toConsumableArray(items), _toConsumableArray(lines)).slice(0, limit);
     setItems(newItems);
     onInserted(newItems);
   };
@@ -93,7 +98,7 @@ var ListInput = function ListInput(_ref) {
     }
   };
   var handleInputChange = function handleInputChange(index, newValue) {
-    var updatedItems = [].concat(items);
+    var updatedItems = _toConsumableArray(items);
     updatedItems[index] = newValue;
     var filteredItems = updatedItems.filter(function (item) {
       return item !== '';
@@ -101,87 +106,39 @@ var ListInput = function ListInput(_ref) {
     setItems(filteredItems);
     onInserted(filteredItems);
   };
-  return /*#__PURE__*/_jsxDEV("div", {
-    children: [label && /*#__PURE__*/_jsxDEV(Label, {
-      label: label,
-      required: true,
-      info: labelInfo
-    }, void 0, false, {
-      fileName: _jsxFileName,
-      lineNumber: 91,
-      columnNumber: 17
-    }, _this), /*#__PURE__*/_jsxDEV("div", {
-      className: styles['input-element'] + " " + styles['list-input-container'],
-      children: /*#__PURE__*/_jsxDEV("ol", {
-        className: styles['list-input'],
-        children: [items.slice(0, limit).map(function (item, index) {
-          return /*#__PURE__*/_jsxDEV("li", {
-            className: styles['item-input'],
-            children: /*#__PURE__*/_jsxDEV("input", {
-              type: "text",
-              value: item,
-              onChange: function onChange(e) {
-                return handleInputChange(index, e.target.value);
-              }
-            }, void 0, false, {
-              fileName: _jsxFileName,
-              lineNumber: 98,
-              columnNumber: 15
-            }, _this)
-          }, index, false, {
-            fileName: _jsxFileName,
-            lineNumber: 97,
-            columnNumber: 13
-          }, _this);
-        }), items.length < limit && /*#__PURE__*/_jsxDEV("li", {
-          className: styles['item-input'],
-          children: /*#__PURE__*/_jsxDEV("input", Object.assign({
-            type: "text",
-            value: item,
-            placeholder: placeholder,
-            onPaste: handlePaste,
-            onChange: handleChange,
-            onKeyDown: handlePushLink,
-            onBlur: pushLink
-          }, props), void 0, false, {
-            fileName: _jsxFileName,
-            lineNumber: 107,
-            columnNumber: 15
-          }, _this)
-        }, void 0, false, {
-          fileName: _jsxFileName,
-          lineNumber: 106,
-          columnNumber: 13
-        }, _this)]
-      }, void 0, true, {
-        fileName: _jsxFileName,
-        lineNumber: 95,
-        columnNumber: 9
-      }, _this)
-    }, void 0, false, {
-      fileName: _jsxFileName,
-      lineNumber: 92,
-      columnNumber: 7
-    }, _this), /*#__PURE__*/_jsxDEV("div", {
-      children: error && /*#__PURE__*/_jsxDEV(Text, {
-        variant: 'paragraph-tiny',
-        className: 'error-field-text text-left',
-        children: error
-      }, void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 123,
-        columnNumber: 11
-      }, _this)
-    }, void 0, false, {
-      fileName: _jsxFileName,
-      lineNumber: 121,
-      columnNumber: 7
-    }, _this)]
-  }, void 0, true, {
-    fileName: _jsxFileName,
-    lineNumber: 90,
-    columnNumber: 5
-  }, _this);
+  return /*#__PURE__*/React.createElement("div", null, label && /*#__PURE__*/React.createElement(Label, {
+    label: label,
+    required: true,
+    info: labelInfo
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "".concat(styles['input-element'], " ").concat(styles['list-input-container'])
+  }, /*#__PURE__*/React.createElement("ol", {
+    className: styles['list-input']
+  }, items.slice(0, limit).map(function (item, index) {
+    return /*#__PURE__*/React.createElement("li", {
+      key: index,
+      className: styles['item-input']
+    }, /*#__PURE__*/React.createElement("input", {
+      type: "text",
+      value: item,
+      onChange: function onChange(e) {
+        return handleInputChange(index, e.target.value);
+      }
+    }));
+  }), items.length < limit && /*#__PURE__*/React.createElement("li", {
+    className: styles['item-input']
+  }, /*#__PURE__*/React.createElement("input", _extends({
+    type: "text",
+    value: item,
+    placeholder: placeholder,
+    onPaste: handlePaste,
+    onChange: handleChange,
+    onKeyDown: handlePushLink,
+    onBlur: pushLink
+  }, props))))), /*#__PURE__*/React.createElement("div", null, error && /*#__PURE__*/React.createElement(Text, {
+    variant: 'paragraph-tiny',
+    className: 'error-field-text text-left'
+  }, error)));
 };
 ListInput.propTypes = {
   label: PropTypes.string,

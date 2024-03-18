@@ -1,20 +1,12 @@
-var _jsxFileName = "/media/mohamed/Nouveau nom3/workspace/hello-jonzz/eskimoz/src/eskimoz-ui/src/lib/input/input.stories.jsx",
-  _this = this;
-import "core-js/modules/es.object.assign.js";
 import React from 'react';
 import Input from './input';
-import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
 var meta = {
   title: 'Input',
   component: Input
 };
 export default meta;
 export var InputText = function InputText(args) {
-  return /*#__PURE__*/_jsxDEV(Input, Object.assign({}, args), void 0, false, {
-    fileName: _jsxFileName,
-    lineNumber: 11,
-    columnNumber: 36
-  }, _this);
+  return /*#__PURE__*/React.createElement(Input, args);
 };
 InputText.args = {
   type: 'text',
@@ -23,11 +15,7 @@ InputText.args = {
   required: true
 };
 export var InputEmail = function InputEmail(args) {
-  return /*#__PURE__*/_jsxDEV(Input, Object.assign({}, args), void 0, false, {
-    fileName: _jsxFileName,
-    lineNumber: 19,
-    columnNumber: 37
-  }, _this);
+  return /*#__PURE__*/React.createElement(Input, args);
 };
 InputEmail.args = {
   type: 'email',
@@ -35,11 +23,7 @@ InputEmail.args = {
   label: 'Email input'
 };
 export var InputUrl = function InputUrl(args) {
-  return /*#__PURE__*/_jsxDEV(Input, Object.assign({}, args), void 0, false, {
-    fileName: _jsxFileName,
-    lineNumber: 26,
-    columnNumber: 35
-  }, _this);
+  return /*#__PURE__*/React.createElement(Input, args);
 };
 InputUrl.args = {
   type: 'url',
