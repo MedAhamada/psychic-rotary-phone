@@ -1,0 +1,30 @@
+.double-bar {
+  height: 200px;
+}
+
+.blue-bar,
+.red-bar {
+  width: 16px;
+  border-radius: 2px;
+}
+
+.blue-bar,
+.legend-square-blue {
+  background-color: var(--primary);
+}
+
+.red-bar,
+.legend-square-red {
+  background-color: var(--blue-dark);
+}
+
+.bars-popover {
+  max-width: 200px !important;
+  text-align: center;
+}
+
+.legend-square-red,
+.legend-square-blue {
+  width: 12px;
+  height: 12px;
+}

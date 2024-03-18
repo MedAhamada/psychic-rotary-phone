@@ -1,0 +1,133 @@
+.button {
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 13px;
+  padding: 10px 16px;
+}
+
+.button-primary {
+  background-color: var(--primary);
+}
+
+.button-secondary,
+.button-icon {
+  color: var(--dark);
+  background-color: var(--white);
+  border: 1px solid var(--gray);
+}
+
+.button-yellow {
+  color: var(--yellow-dark);
+  background-color: var(--yellow-light);
+}
+
+.button-icon {
+  padding: 10px;
+}
+
+.button-danger {
+  background-color: var(--red);
+  font-weight: bold;
+}
+
+.button-link {
+  background-color: transparent;
+  color: var(--blue);
+  padding: 0;
+  font-weight: normal;
+}
+
+.button-link-red {
+  background-color: transparent;
+  color: var(--red);
+  padding: 0;
+  font-weight: normal;
+}
+.button-link-red:hover {
+  color: var(--red-dark);
+}
+
+.button-large {
+  padding: 15px 16px;
+  font-weight: bold;
+}
+
+.width-full {
+  width: 100%;
+}
+
+.dropdown-button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid var(--gray-x-light);
+  background-color: var(--white);
+  gap: 8px;
+}
+
+.dropdown-button-placeholder {
+  color: var(--gray-dark);
+}
+.dropdown-button .arrow-icon {
+  color: var(--dark);
+}
+
+/*********** HOVERS ************/
+
+.button-primary:hover {
+  background-color: var(--blue-dark);
+}
+
+.button-secondary:hover {
+  background-color: var(--gray-light);
+}
+
+.button-danger:hover {
+  background-color: var(--red-dark);
+}
+
+.button-icon:hover {
+  background-color: var(--light);
+  color: var(--dark);
+}
+
+.button-link:hover {
+  color: var(--blue-dark);
+  background-color: transparent;
+}
+
+/*********** DISABLED ************/
+
+.button:disabled {
+  background-color: var(--light);
+  color: var(--gray-dark);
+  border: none;
+  cursor: not-allowed;
+}
+
+.button-icon:disabled {
+  border: 1px solid var(--gray);
+}
+
+.button-link:disabled {
+  color: var(--gray-dark);
+  background-color: transparent;
+}
+
+.button-medium-grey {
+  background-color: var(--medium-grey);
+  color: white;
+  border-radius: 4px !important;
+  line-height: 130%;
+  letter-spacing: -0.4px;
+}

@@ -1,0 +1,53 @@
+.filter-container {
+  position: absolute;
+  top: 28px;
+  left: -16px;
+  min-width: 180px;
+  background-color: white;
+  color: var(--dark);
+  padding: 12px;
+  gap: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--light);
+  box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.08);
+  width: max-content;
+}
+
+.table-search-input {
+  padding: 10px;
+  background-color: var(--gray-light);
+  border-radius: 8px;
+  max-width: 200px;
+}
+
+.table-search-input::placeholder {
+  color: var(--gray-dark);
+}
+
+.client-image {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+}
+
+.filter-date-container .select-date-filter {
+  padding: 5px;
+  margin: 2px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  display: block;
+}
+
+.filter-container .select-date-filter:hover {
+  background-color: var(--gray-light);
+}
+
+.input-date {
+  background: var(--grayish);
+  color: #b3b3b3;
+  padding: 9px 10px;
+  border-radius: 8px;
+  width: 265px;
+  border: none;
+  box-shadow: none !important;
+}

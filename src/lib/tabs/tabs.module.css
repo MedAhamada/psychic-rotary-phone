@@ -1,0 +1,36 @@
+.tabs {
+  background-color: var(--white);
+  padding: 4px;
+  border-radius: 8px;
+  width: fit-content;
+}
+
+.tab,
+.tab-separated {
+  display: flex;
+  padding: 5px 10px;
+  align-items: center;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--gray-dark);
+}
+
+.tab.active {
+  color: var(--primary);
+  background: #d1e1ff;
+  box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.12);
+}
+
+.tab-content {
+  margin-top: 24px;
+  width: 100%;
+}
+
+.tab-separated {
+  padding: 8px 12px;
+}
+
+.tab-separated.active {
+  background-color: var(--white);
+  color: var(--dark);
+}

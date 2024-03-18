@@ -1,0 +1,51 @@
+.pagination-container {
+  margin-top: 8px;
+}
+
+.pagination-container .results-number {
+  color: var(--gray-dark);
+  margin-right: 10px;
+}
+
+.pagination-container .threedots {
+  align-self: end;
+}
+
+.pagination-container .number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  cursor: pointer;
+  min-width: 30px;
+  height: 30px;
+  border: 1px solid var(--gray-xx-light);
+  background-color: var(--white);
+}
+
+.pagination-container .number:hover {
+  background-color: var(--light);
+}
+
+.pagination-container .number:active {
+  opacity: 0.6;
+}
+
+.pagination-container .number.active {
+  color: var(--white);
+  background-color: var(--primary);
+  border: none;
+}
+
+.anticon {
+  color: var(--dark);
+}
+.filter-icon {
+  background-color: var(--light);
+  border-radius: 2px;
+}
+.active-filter-icon {
+  color: var(--white);
+  background-color: var(--primary);
+  border-radius: 2px;
+}

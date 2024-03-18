@@ -1,0 +1,150 @@
+.menu-container {
+  position: absolute;
+  bottom: 40px;
+  padding: 0 16px;
+  width: 100%;
+}
+
+.menu-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  // padding: 0 12px;
+  width: 100%;
+}
+
+.menu-button-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.menu-logo-primary {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.menu-logo-secondary {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  background-color: var(--white);
+  border-radius: 4px;
+}
+
+.text-container {
+  // margin: 0 8px;
+  text-align: left;
+  word-break: break-all;
+}
+
+.menu-text-active {
+  color: var(--white) !important;
+}
+
+.menu-title-primary {
+  color: var(--primary-dark);
+}
+
+.menu-title-secondary {
+  color: var(--gray-dark);
+}
+
+.menu-subtitle {
+  color: var(--gray-dark);
+}
+
+.menu-button-icon-primary {
+  color: var(--primary-dark);
+}
+
+.menu-button-icon-secondary {
+  color: var(--gray-dark);
+}
+
+.menu-options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: absolute;
+  left: 224px;
+  bottom: 4%;
+  background: var(--white);
+  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  padding: 16px;
+  width: 218px;
+}
+
+.menu-option {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  color: var(--dark);
+  opacity: 0.5;
+}
+
+.menu-item-active,
+.menu-button:hover .menu-title-secondary,
+.menu-button:hover .menu-subtitle,
+.menu-button:hover .menu-button-icon-secondary {
+  color: var(--white);
+}
+
+.menu-option:hover {
+  opacity: 1;
+}
+
+.menu-options-container .menu-option:last-of-type {
+  color: var(--red);
+  opacity: 1;
+}
+
+.exit-workspace-button {
+  margin: 16px 12px 0 12px;
+}
+
+.menu-options-dropdown-btn {
+  padding: 0 !important;
+  border: none !important;
+
+  .menu-options-dropdown-icon {
+    opacity: 0.5;
+  }
+}
+
+.menu-options-dropdown-btn-text {
+  color: var(--dark);
+  opacity: 0.5;
+}
+
+.btn-dropdown-item:disabled {
+  cursor: not-allowed;
+
+  .menu-options-dropdown-btn-text {
+    opacity: 0.4;
+  }
+
+  .menu-options-dropdown-btn-flag {
+    filter: var(--gray);
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+  }
+}
+
+.ant-dropdown-menu-item:hover:has(.btn-dropdown-item:disabled) {
+  background-color: var(--white) !important;
+}
+
+.trancate-sidebar-text {
+  max-width: 197px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block !important;
+}

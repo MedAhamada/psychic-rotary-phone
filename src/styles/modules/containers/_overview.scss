@@ -1,0 +1,140 @@
+.overview-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 24px;
+
+  .card-client-team,
+  .card-eskimoz-team {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    .team-header {
+      padding: 16px;
+      border-radius: 16px 16px 0 0;
+      height: 74px;
+      min-height: 74px;
+
+      .left-side {
+        gap: 8px;
+
+        img {
+          border-radius: 8px;
+        }
+      }
+
+      .right-side {
+        gap: 8px;
+        .icon {
+          padding: 6px;
+          color: var(--white);
+          background-color: var(--blue);
+          border-radius: 8px;
+        }
+      }
+
+      .button-icon {
+        padding: 6px;
+        color: var(--dark);
+
+        &-light {
+          color: var(--light);
+        }
+      }
+    }
+
+    .grid-2-columns {
+      gap: 24px;
+    }
+  }
+
+  .card-client-team {
+    .team-header {
+      color: var(--white);
+      background-color: var(--primary-dark);
+    }
+  }
+  .card-eskimoz-team {
+    border-radius: 16px;
+    .team-header {
+      background-color: var(--white) !important;
+      background-image: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0) 26%,
+        rgba(0, 213, 255, 0.05) 100%
+      );
+      border-bottom: 1px solid var(--gray-light);
+    }
+  }
+
+  .team-category-title {
+    margin-bottom: 8px;
+  }
+}
+
+.card-wrapper {
+  gap: 16px;
+  height: 100%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  border-radius: 0px 0px 16px 16px;
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .flex-y-center {
+      gap: 4px;
+    }
+
+    &-icon {
+      height: 22px;
+      width: 22px;
+      color: var(--blue);
+      background-color: var(--light);
+      border-radius: 4px;
+    }
+
+    .card-top-right-icon {
+      background-color: var(--blue-x-light);
+      color: var(--blue);
+      border-radius: 50px;
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.team-member-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--gray-light);
+  position: relative;
+  height: 70px;
+
+  .ship-badge {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+
+  .chip-img {
+    img {
+      width: 24px;
+      height: 24px;
+      object-fit: cover;
+      border-radius: 40px;
+    }
+  }
+}
+
+.tools-list-container {
+  gap: 28px 40px;
+}

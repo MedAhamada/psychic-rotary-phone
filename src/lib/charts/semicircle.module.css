@@ -1,0 +1,22 @@
+.semicircle-container {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+}
+
+.white-circle {
+  position: absolute;
+  width: fit-content;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.fame-text {
+  width: 100%;
+  color: var(--blue);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

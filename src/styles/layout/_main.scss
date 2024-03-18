@@ -1,0 +1,25 @@
+.sidebar-layout {
+  width: 240px;
+  height: 100%;
+  z-index: 8000;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.content-layout {
+  margin-left: 240px;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  background-color: var(--white);
+}
+
+.home-container {
+  padding: 40px;
+  background-color: var(--gray-light);
+}

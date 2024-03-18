@@ -1,0 +1,655 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import 'root';
+@import 'reset';
+
+body {
+  background-color: var(--gray-light);
+  color: var(--dark);
+  font-family: 'Inter', sans-serif;
+  line-height: 1;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.w-fit-content {
+  width: fit-content;
+}
+
+.w-max-content {
+  width: max-content;
+}
+
+.h-fit-content {
+  height: fit-content;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.h-auto {
+  height: auto !important;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.h-screen-50 {
+  height: calc(100vh / 2);
+}
+
+.asterisk-input {
+  color: var(--primary);
+  line-height: 10px;
+}
+
+.error-field {
+  border: 1px solid var(--red) !important;
+  border-radius: 8px;
+}
+
+.error-field-text {
+  color: var(--gray-dark);
+  padding: 4px 0;
+  margin-top: 2px;
+}
+
+.text-left {
+  text-align: left;
+}
+
+/******** Flex Classes **********
+Pattern on naming: [flex]-[direction]-[justify-content]-[align-items]
+*/
+.flex,
+.flex-center,
+.flex-start,
+.flex-end,
+.flex-col,
+.flex-wrap,
+.flex-col-center,
+.flex-between,
+.flex-y-center,
+.flex-col-end,
+.flex-y-end,
+.flex-between-center,
+.flex-around-center,
+.flex-center-start,
+.flex-start-center,
+.flex-between-start {
+  display: flex;
+}
+
+.flex-between {
+  justify-content: space-between;
+}
+
+.flex-around-center {
+  justify-content: space-around;
+}
+
+.flex-start,
+.flex-col-start .flex-start-center {
+  justify-content: start;
+  align-items: center;
+}
+
+.flex-end {
+  justify-content: end;
+}
+
+.flex-col-end,
+.flex-y-end {
+  align-items: end;
+}
+
+.flex-col,
+.flex-col-start,
+.flex-col-end {
+  flex-direction: column;
+}
+
+.flex-center-start {
+  justify-content: center;
+  align-items: start;
+}
+
+.flex-between-start {
+  justify-content: space-between;
+  align-items: start;
+}
+
+.flex-y-center,
+.flex-between-center,
+.flex-center,
+.flex-col-center,
+.flex-around-center {
+  align-items: center;
+}
+
+.flex-between-center {
+  justify-content: space-between;
+}
+
+.flex-center,
+.flex-col-center {
+  justify-content: center;
+}
+
+.flex-col-center {
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-grow-1 {
+  flex-grow: 1;
+}
+
+/******** Grid Classes ********/
+.grid,
+.grid-2-columns,
+.grid-3-columns,
+.grid-4-columns {
+  display: grid;
+}
+
+.grid-2-columns {
+  grid-template-columns: 1fr 1fr;
+}
+
+.grid-3-columns {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid-4-columns {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.grid-3-columns,
+.grid-2-columns {
+  @media only screen and (max-width: 1250px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media only screen and (max-width: 998px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.col-span-1 {
+  grid-column: span 1;
+}
+
+.col-span-2 {
+  grid-column: span 2;
+}
+
+.col-span-3 {
+  grid-column: span 3;
+}
+
+.col-span-4 {
+  grid-column: span 4;
+}
+
+/***********  Positions ************/
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+/***********  Gaps ************/
+.gap-tn {
+  gap: 2px;
+}
+.gap-xs {
+  gap: 4px;
+}
+.gap-sm {
+  gap: 8px;
+}
+.gap-base {
+  gap: 12px;
+}
+.gap-md {
+  gap: 16px;
+}
+.gap-lg {
+  gap: 24px;
+}
+.gap-xl {
+  gap: 40px;
+}
+
+/***********  Paddings ************/
+.p-xs {
+  padding: 4px !important;
+}
+.p-sm {
+  padding: 8px !important;
+}
+.p-base {
+  padding: 12px !important;
+}
+.p-md {
+  padding: 16px !important;
+}
+.p-lg {
+  padding: 24px !important;
+}
+.p-xl {
+  padding: 40px !important;
+}
+
+.px-xs {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+.py-xs {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.px-sm {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.py-sm {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.px-base {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.py-base {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.px-md {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.py-md {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.px-lg {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+.py-lg {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.pr-lg {
+  padding-right: 24px;
+}
+
+.pl-lg {
+  padding-left: 24px;
+}
+
+.px-xl {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.py-xl {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.pt-xl {
+  padding-top: 40px;
+}
+.pb-xl {
+  padding-bottom: 40px;
+}
+
+/***********  Margins ************/
+.m-xs {
+  margin: 4px;
+}
+.m-sm {
+  margin: 8px;
+}
+.m-md {
+  margin: 16px;
+}
+.m-lg {
+  margin: 24px;
+}
+.m-xl {
+  margin: 40px;
+}
+
+.my-xs {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.my-sm {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.my-md {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.mx-sm {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+// right
+.mr-sm {
+  margin-right: 8px;
+}
+
+// bottom
+.mb-md {
+  margin-bottom: 16px;
+}
+.mb-lg {
+  margin-bottom: 24px;
+}
+
+// top
+.mt-auto {
+  margin-top: auto;
+}
+.mt-xs {
+  margin-top: 4px;
+}
+.mt-sm {
+  margin-top: 8px;
+}
+
+// left
+.ml-auto {
+  margin-left: auto;
+}
+
+/*********** Cursors ************/
+.cursor-pointer {
+  cursor: pointer;
+}
+.cursor-default {
+  cursor: default !important;
+}
+.cursor-not-allowed {
+  cursor: not-allowed !important;
+}
+
+/***********  Border Radiuses ************/
+.rounded-xs {
+  border-radius: 4px !important;
+}
+.rounded-sm {
+  border-radius: 8px !important;
+}
+.rounded-md {
+  border-radius: 16px !important;
+}
+.rounded-lg {
+  border-radius: 24px !important;
+}
+.rounded-xl {
+  border-radius: 40px !important;
+}
+.rounded-full {
+  border-radius: 999px !important;
+}
+
+/***********  Shadow Effects ************/
+.shadow-primary,
+.ant-dropdown-menu {
+  box-shadow: 0px 8px 14px 0px rgba(0, 0, 0, 0.08) !important;
+}
+
+/*************** top, bottom, left, right ***************/
+
+.-bottom-xs {
+  bottom: -4px;
+}
+.bottom-xs {
+  bottom: -4px;
+}
+
+/*********** Start AntDesign Overrides ************/
+.ant-drawer {
+  z-index: 9000 !important;
+}
+
+.ant-dropdown {
+  z-index: 9500 !important;
+}
+
+.ant-select-dropdown {
+  z-index: 9800 !important;
+}
+
+.ant-select-selection-placeholder {
+  color: var(--gray-dark) !important;
+  font-size: 14px !important;
+}
+
+.ant-select-selection-item {
+  font-size: 14px !important;
+}
+
+.ant-select-selector {
+  border-color: var(--gray-x-light) !important;
+  box-shadow: none !important;
+  border-radius: 8px !important;
+}
+
+.ant-checkbox + span {
+  width: 100% !important;
+}
+
+.ant-checkbox,
+.ant-radio {
+  top: unset !important;
+}
+
+.ant-drawer-wrapper-body {
+  padding-top: 0 !important;
+}
+
+.ant-dropdown-menu-item:hover {
+  background-color: var(--light) !important;
+}
+
+.hover-primary .ant-dropdown-menu-item:hover {
+  background-color: transparent !important;
+  color: var(--primary) !important;
+}
+
+.ant-dropdown-menu-item {
+  padding: 0 !important;
+}
+
+.ant-popover {
+  z-index: 9999;
+}
+
+.ant-select-item-option-active {
+  background-color: var(--light) !important;
+}
+
+.ant-select-item-option-selected {
+  background-color: var(--gray-light) !important;
+  font-weight: normal !important;
+}
+
+/*********** End AntDesign Overrides ************/
+
+/** Overflow */
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-scroll-y {
+  overflow-y: scroll;
+}
+
+.custom-scrollbar {
+  padding-right: 2px;
+  padding-left: 2px;
+  &::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--gray);
+    border-radius: 5px;
+  }
+}
+
+/***********  Text ************/
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.font-500 {
+  font-weight: 500 !important;
+}
+
+.font-600 {
+  font-weight: 600 !important;
+}
+
+.font-700 {
+  font-weight: 700 !important;
+}
+
+.font-800 {
+  font-weight: 800 !important;
+}
+
+.font-900 {
+  font-weight: 900 !important;
+}
+
+.text-xs {
+  font-size: 12px !important;
+}
+.text-sm {
+  font-size: 14px !important;
+}
+.text-md {
+  font-size: 16px !important;
+}
+.text-lg {
+  font-size: 18px !important;
+}
+.text-xl {
+  font-size: 24px !important;
+}
+.text-2xl {
+  font-size: 40px !important;
+}
+
+.word-break {
+  word-break: break-word !important;
+}
+.word-keep-all {
+  word-break: keep-all !important;
+}
+
+.white-space-nowrap {
+  white-space: nowrap;
+}
+
+.truncate-1-line {
+  max-width: 160px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.truncate-2-lines {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+/***********  Background ************/
+
+.bg-white-shadow {
+  background-color: var(--white);
+  box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.08);
+}
+
+.no-repeat-center-cover {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.no-repeat-center {
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/***********  Images ************/
+.object-cover {
+  object-fit: cover;
+}
+
+.object-position-left {
+  object-position: left;
+}
+
+.object-contain {
+  object-fit: contain;
+}
+
+/************** Borders ******************/
+
+.border-gray {
+  border: 1px solid var(--gray);
+}
+
+.border-light {
+  border: 1px solid var(--gray-xx-light);
+}
+
+.border-b-light {
+  border-bottom: 1px solid var(--gray-xx-light);
+}
+
+.grayscale {
+  filter: grayscale(40%);
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(28, 29, 30, 0.4);
+  border-radius: 7px;
+}

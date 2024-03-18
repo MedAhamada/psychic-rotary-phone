@@ -1,0 +1,43 @@
+.profile-container {
+  .profile-infos {
+    background-color: var(--white);
+    border: 1px solid var(--gray-xx-light);
+
+    .profile-image {
+      width: fit-content;
+      img {
+        width: 48px;
+        height: 48px;
+        border-radius: 50px;
+        object-fit: cover;
+      }
+    }
+
+    .info-content {
+      padding: 11px 0;
+    }
+  }
+
+  .profile-cta-btn {
+    font-weight: 700;
+    margin-top: 16px;
+  }
+}
+
+.file-import-container {
+  width: 240px;
+  background-color: var(--white);
+  top: 45px;
+  left: 0;
+
+  .file-instructions {
+    margin-top: 4px;
+    color: var(--gray-dark);
+  }
+}
+
+.interests-response {
+  padding: 11px 12px 11px 0;
+  text-transform: capitalize;
+  height: 40px;
+}

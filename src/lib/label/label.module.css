@@ -1,0 +1,11 @@
+.input-label {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-bottom: 5px;
+}
+
+.asterisk-input {
+  color: var(--primary);
+  line-height: 10px;
+}

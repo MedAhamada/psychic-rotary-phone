@@ -1,0 +1,26 @@
+.gradient-progressbar,
+.gradient-progressbar-light,
+.gradient-progressbar-dark {
+  height: 16px;
+  width: 100%;
+}
+
+.gradient-progressbar-light {
+  background: linear-gradient(90deg, #dfeaef 0%, #d1e1ff 36.46%, #2f80ed 100%);
+}
+
+.gradient-progressbar-dark {
+  background: linear-gradient(
+    90deg,
+    #dfeaef 0%,
+    #d1e1ff 36.46%,
+    #2f80ed 77.08%,
+    #0e44a8 100%
+  );
+}
+
+.gradient-progressbar-empty {
+  height: 100%;
+  float: right;
+  background-color: #e7eaee;
+}

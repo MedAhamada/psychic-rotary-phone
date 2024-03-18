@@ -1,0 +1,42 @@
+.contrats-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.contract-card {
+  background-color: var(--white);
+  border: 1px solid var(--gray-xx-light);
+  padding: 16px;
+  border-radius: 8px;
+
+  &-header {
+    margin-bottom: 16px;
+
+    .date {
+      color: var(--gray-dark);
+      text-transform: capitalize;
+    }
+  }
+}
+
+.contract-help-card {
+  width: 262px;
+  height: 191px;
+  border-radius: 16px;
+  object-fit: cover;
+  background-size: cover !important;
+  color: var(--blue);
+}
+
+.igloo-house-container {
+  width: 100%;
+  height: calc(100vh - 159px);
+  background-position: center;
+  background-size: cover;
+  color: var(--gray-dark);
+
+  .emptiness-msg {
+    margin-top: 5rem;
+  }
+}

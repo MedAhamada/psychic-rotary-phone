@@ -1,0 +1,42 @@
+.auth-page {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* 482px calc(100% - 482px) */
+  height: 100vh;
+  background-color: #fff;
+
+  &-container {
+    gap: 80px;
+    flex-direction: column;
+    display: flex;
+    padding: 40px;
+    padding-bottom: 80px;
+    position: relative;
+
+    .logo-wrapper {
+      text-align: center;
+    }
+  }
+
+  .auth-form-container {
+    text-align: center;
+
+    .auth-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin: 24px 0;
+    }
+  }
+
+  .eskimoz-character {
+    background-color: #edf8fd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 561px;
+      height: 561px;
+    }
+  }
+}

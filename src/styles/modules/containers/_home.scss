@@ -1,0 +1,76 @@
+.home {
+  padding: 40px;
+  .home-date {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 130%;
+    letter-spacing: -0.4px;
+    color: var(--dark);
+  }
+  &-heading {
+    margin-bottom: 40px;
+  }
+
+  &-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  &-column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .user-invitation-card,
+    .profiles-card {
+      padding: 16px 24px;
+      border-radius: 16px;
+      min-height: 138px;
+    }
+
+    .profiles-card {
+      background-color: white;
+      position: relative;
+      gap: 12px;
+
+      &-user {
+        text-align: center;
+        gap: 4px;
+        .user-img {
+          margin-bottom: 2px;
+          img {
+            width: 55px;
+            height: 55px;
+            border-radius: 25px;
+            object-fit: cover;
+          }
+        }
+        .home-user-name {
+          color: var(--black-light);
+        }
+        .home-user-title {
+          color: var(--gray-x-dark);
+        }
+      }
+
+      .top-arrow {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background-color: var(--blue-light);
+        color: var(--blue);
+        border-radius: 50px;
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    .user-invitation-card {
+      gap: 8px;
+      background-color: var(--light);
+      box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.08);
+    }
+  }
+}

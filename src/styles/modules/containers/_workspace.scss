@@ -1,0 +1,29 @@
+.table-btn-action {
+  padding: 5px;
+  background-color: var(--primary);
+  color: var(--white);
+  border-radius: 8px;
+}
+
+.uptable-input-search {
+  background-color: var(--gray-x-light);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+
+  button {
+    background-color: var(--primary);
+    height: fit-content;
+    color: var(--white);
+    margin-right: 5px;
+    padding: 7px 16px;
+    border-radius: 8px;
+  }
+}
+
+.client-image {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+}

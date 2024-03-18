@@ -1,0 +1,9 @@
+.name-report-input {
+  padding: 4px 8px;
+  border: 1px solid var(--gray);
+  border-radius: 6px;
+  margin-top: 5px;
+  &::placeholder {
+    color: var(--gray-dark);
+  }
+}

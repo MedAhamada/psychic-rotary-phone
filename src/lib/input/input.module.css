@@ -1,0 +1,104 @@
+.input-container {
+  height: 40px;
+}
+
+.input-element {
+  padding: 12px;
+  border: 1px solid var(--gray-x-light);
+  font-size: 13px;
+  height: 100%;
+  width: 100%;
+}
+
+.input-element::placeholder,
+.list-input li.item-input input[type='text']::placeholder {
+  color: var(--gray-dark);
+}
+
+.input-text,
+.list-input-container {
+  border-radius: 8px;
+}
+
+.input-url-email {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.input-url-email-container {
+  display: flex;
+  align-items: center;
+}
+
+.input-side {
+  color: var(--gray-dark);
+  background-color: var(--gray-light);
+  border: 1px solid var(--gray-x-light);
+  padding: 11px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-right: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auto-complete-drop-icon {
+  position: absolute;
+  top: 37px;
+  right: 10px;
+}
+
+.outlined-input {
+  border-left: 0;
+  padding-left: 0;
+}
+
+/**************** Begin list input style *****************/
+.list-input-container {
+  min-height: 200px;
+}
+
+.list-input {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  list-style: none;
+  counter-reset: item;
+  font-size: 13px;
+}
+
+.list-input li {
+  counter-increment: item;
+  color: var(--blue);
+  display: flex;
+  width: 100%;
+  align-items: start;
+}
+
+.list-input li p {
+  font-size: 13px !important;
+}
+
+.list-input li.item-input {
+  align-items: center;
+}
+
+.list-input li.item-input input[type='text'] {
+  background-color: transparent;
+  color: var(--blue);
+  width: 100%;
+}
+
+.list-input li:before {
+  margin-right: 8px;
+  margin-top: 2px;
+  content: counter(item) '.';
+  color: gray;
+  min-width: 18px;
+  text-align: center;
+  display: inline-block;
+}
+
+/**************** End list input style *****************/
