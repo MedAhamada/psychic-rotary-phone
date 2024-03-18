@@ -2,7 +2,7 @@
   "name": "@eskimoz/ui",
   "version": "1.0.0",
   "main": "./src/index.js",
-  "module": "./dist/index.js",
+  "module": "./src/index.js",
   "dependencies": {
     "antd": "^5.10.2",
     "dayjs": "^1.11.10",
