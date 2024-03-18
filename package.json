@@ -1,10 +1,8 @@
 {
   "name": "@eskimoz/ui",
   "version": "1.0.0",
-  "type": "module",
   "main": "./src/index.js",
-  "typings": "./src/index.d.ts",
-  "module": "./src/index.js",
+  "module": "./dist/index.js",
   "dependencies": {
     "antd": "^5.10.2",
     "dayjs": "^1.11.10",
